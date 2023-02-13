@@ -1,9 +1,75 @@
 import Head from "next/head";
 import styles from "styles/First.module.css";
-import Lesson from "pages/components/lesson.js";
+import Lesson from "components/lesson.js";
+import React, { useState, useEffect } from "react";
 
+// import localFont from 'fonts/'
+// const glametrix = localFont({ src: 'fonts/Glametrix.otf' });
 
 export default function Home() {
+  let p = [1, 2];
+  let lessons = [];
+  const [lessonsState, setLessonsState] = useState([
+    {
+      name: "Αγγλικά - Προπαρασκευαστικό",
+      type: "Προπαρασκευαστικό (ΠΡ)",
+      ects: "0",
+      selected: false,
+    },
+    {
+      name: "Ιστορία Design I",
+      type: "Υποχρεωτικό (Υ)",
+      ects: "6",
+      selected: false,
+    },
+    {
+      name: "Στούντιο 1A - Σχέδιο Χρώμα",
+      type: "Υποχρεωτικό (Υ)",
+      ects: "4",
+      selected: false,
+    },
+    {
+      name: "Πληροφορική",
+      type: "Υποχρεωτικό (Υ)",
+      ects: "6",
+      selected: false,
+    },
+    {
+      name: "Θεωρία και Μεθοδολογία Σχεδίασης",
+      type: "Υποχρεωτικό (Υ)",
+      ects: "6",
+      selected: false,
+    },
+    {
+      name: "Στούντιο 1Β - Ελεύθερο Σχέδιο",
+      type: "Υποχρεωτικό (Υ)",
+      ects: "2",
+      selected: false,
+    },
+    {
+      name: "Μαθηματικά Ι",
+      type: "Υποχρεωτικό (Υ)",
+      ects: "6",
+      selected: true,
+    },
+  ]);
+  const [ects, setEcts] = useState(0);
+
+  const calculateEcts = (state) => {
+    let num = 0;
+    for (let i = 0; i < lessonsState.length; i++) {
+      if (lessonsState[i].selected) {
+        num += parseInt(lessonsState[i].ects);
+      }
+    }
+    console.log(num);
+    setEcts(num);
+  };
+
+  useEffect(() => {
+    calculateEcts();
+  }, []);
+
   return (
     <>
       <Head>
@@ -12,20 +78,47 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
 
-        <Lesson />
-        
+      <main>
+        {/* <div className={styles.container}>
+          {lessons.map((lesson) => {
+            return (
+              <div>
+                <Lesson data={lesson} />
+              </div>
+            );
+          })}
+        </div> */}
+
+        {/* <h2>
+          <button onClick={hardCodedLessons}>Start </button>
+        </h2> */}
+
+        <div className={styles.container}>
+          {lessonsState.map((lesson) => {
+            return (
+              <div>
+                <Lesson data={lesson} onClick={calculateEcts} />
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles.container}>
+          <div className={styles.ects}>ECTS = {ects}</div>
+          <div className={styles.ects2}>Remaining = {300 - ects}</div>
+        </div>
       </main>
+
       <style jsx global>{`
         html,
         body {
           max-width: 100vw;
-          overflow-x: hidden;
+          // overflow-x: hidden;
         }
         body {
           color: black;
-          background: grey;
+          background: white;
+          font-family: GeomLight;
         }
 
         a {

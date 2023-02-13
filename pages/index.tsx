@@ -55,7 +55,7 @@ export default function Home() {
   ]);
   const [ects, setEcts] = useState(0);
 
-  const calculateEcts = (state) => {
+  const calculateEcts = () => {
     let num = 0;
     for (let i = 0; i < lessonsState.length; i++) {
       if (lessonsState[i].selected) {

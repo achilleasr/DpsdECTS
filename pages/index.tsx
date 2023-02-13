@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "styles/First.module.css";
 import Lesson from "components/lesson.js";
 import React, { useState, useEffect } from "react";
+import {hardcoded} from "components/hardcoded.js";
 
 // import localFont from 'fonts/'
 // const glametrix = localFont({ src: 'fonts/Glametrix.otf' });
@@ -9,52 +10,11 @@ import React, { useState, useEffect } from "react";
 export default function Home() {
   let p = [1, 2];
   let lessons = [];
-  const [lessonsState, setLessonsState] = useState([
-    {
-      name: "Αγγλικά - Προπαρασκευαστικό",
-      type: "Προπαρασκευαστικό (ΠΡ)",
-      ects: "0",
-      selected: false,
-    },
-    {
-      name: "Ιστορία Design I",
-      type: "Υποχρεωτικό (Υ)",
-      ects: "6",
-      selected: false,
-    },
-    {
-      name: "Στούντιο 1A - Σχέδιο Χρώμα",
-      type: "Υποχρεωτικό (Υ)",
-      ects: "4",
-      selected: false,
-    },
-    {
-      name: "Πληροφορική",
-      type: "Υποχρεωτικό (Υ)",
-      ects: "6",
-      selected: false,
-    },
-    {
-      name: "Θεωρία και Μεθοδολογία Σχεδίασης",
-      type: "Υποχρεωτικό (Υ)",
-      ects: "6",
-      selected: false,
-    },
-    {
-      name: "Στούντιο 1Β - Ελεύθερο Σχέδιο",
-      type: "Υποχρεωτικό (Υ)",
-      ects: "2",
-      selected: false,
-    },
-    {
-      name: "Μαθηματικά Ι",
-      type: "Υποχρεωτικό (Υ)",
-      ects: "6",
-      selected: true,
-    },
-  ]);
+  const [lessonsState, setLessonsState] = useState(hardcoded);
   const [ects, setEcts] = useState(0);
 
+
+  // console.log(hardcoded);
   const calculateEcts = () => {
     let num = 0;
     for (let i = 0; i < lessonsState.length; i++) {
@@ -80,24 +40,12 @@ export default function Home() {
       </Head>
 
       <main>
-        {/* <div className={styles.container}>
-          {lessons.map((lesson) => {
-            return (
-              <div>
-                <Lesson data={lesson} />
-              </div>
-            );
-          })}
-        </div> */}
-
-        {/* <h2>
-          <button onClick={hardCodedLessons}>Start </button>
-        </h2> */}
 
         <div className={styles.container}>
           {lessonsState.map((lesson) => {
             return (
               <div>
+                {/* {lesson.semester == 3? (<div>s3</div>):(<div>s</div>)} */}
                 <Lesson data={lesson} onClick={calculateEcts} />
               </div>
             );

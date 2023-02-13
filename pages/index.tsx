@@ -62,7 +62,7 @@ export default function Home() {
         num += parseInt(lessonsState[i].ects);
       }
     }
-    console.log(num);
+    // console.log(num);
     setEcts(num);
   };
 

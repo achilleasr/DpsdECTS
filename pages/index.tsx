@@ -1,18 +1,15 @@
 import Head from "next/head";
 import styles from "styles/First.module.css";
 import Lesson from "components/lesson.js";
-import React, { useState, useEffect } from "react";
-import {hardcoded} from "components/hardcoded.js";
-
-// import localFont from 'fonts/'
-// const glametrix = localFont({ src: 'fonts/Glametrix.otf' });
+import React, { useState, useEffect, useCallback } from "react";
+import { hardcoded } from "components/hardcoded.js";
+// import smiley from "/favicon.ico";
 
 export default function Home() {
   let p = [1, 2];
   let lessons = [];
   const [lessonsState, setLessonsState] = useState(hardcoded);
   const [ects, setEcts] = useState(0);
-
 
   // console.log(hardcoded);
   const calculateEcts = () => {
@@ -24,6 +21,27 @@ export default function Home() {
     }
     // console.log(num);
     setEcts(num);
+  };
+
+  // const handleClick = (e) => {
+  //   if (e.type === 'click') {
+  //     calculateEcts();
+  //   } else if (e.type === 'contextmenu') {
+  //     console.log('Right click');
+  //   }
+  // };
+
+  const calculateMandatory = () => {
+    let num = 0;
+    for (let i = 0; i < lessonsState.length; i++) {
+      if (
+        (lessonsState[i].selected == false) &
+        (lessonsState[i].type == "Υποχρεωτικό (Υ)")
+      ) {
+        num += parseInt(lessonsState[i].ects);
+      }
+    }
+    return num;
   };
 
   useEffect(() => {
@@ -40,7 +58,6 @@ export default function Home() {
       </Head>
 
       <main>
-
         <div className={styles.container}>
           {lessonsState.map((lesson) => {
             return (
@@ -51,9 +68,42 @@ export default function Home() {
             );
           })}
         </div>
-        <div className={styles.container}>
+
+        <div className={styles.containerRight}>
           <div className={styles.ects}>ECTS = {ects}</div>
-          <div className={styles.ects2}>Remaining = {300 - ects}</div>
+          {(300 - ects) > 0 ? (<div className={styles.ects2}>Υπολειπόμενα = {300 - ects}</div>):(<div className={styles.ectsPassed}><img className={styles.smiley} src="/smiley.svg" alt="Graduated Happily" /></div>)}
+          {lessonsState.map((lesson) => {
+            return (
+              <div>
+                {(lesson.selected == false) &
+                (lesson.type == "Υποχρεωτικό (Υ)") ? (
+                  <div className={styles.additionContainer}>
+                    <div className={styles.additionName}>{lesson.name}</div>
+                    <div className={styles.additionEcts}>{lesson.ects}</div>
+                  </div>
+                ) : (
+                  <div></div>
+                )}
+              </div>
+            );
+          })}
+
+          {calculateMandatory() > 0 && (
+            <div className={styles.line}>
+              +<br />
+              <hr />
+              <div className={styles.result1Left}>
+                {calculateMandatory()}
+              </div>
+              <div className={styles.result1Right}>  ects από υποχρεωτικά</div>
+              <div className={styles.ects}>
+                ECTS = {ects + calculateMandatory()}
+              </div>
+              <div className={styles.ects2}>
+                Υπολειπόμενα = {300 - ects - calculateMandatory()}
+              </div>
+            </div>
+          )}
         </div>
       </main>
 

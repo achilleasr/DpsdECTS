@@ -76,13 +76,13 @@ export const hardcoded = [
     semester: "2",
     selected: true,
   },
-  {
-    name: "Στούντιο 2Β - Ελεύθερο Σχέδιο",
-    type: "Υποχρεωτικό (Υ)",
-    ects: "2",
-    semester: "2",
-    selected: false,
-  },
+  // {
+  //   name: "Στούντιο 2Β - Ελεύθερο Σχέδιο",
+  //   type: "Υποχρεωτικό (Υ)",
+  //   ects: "2",
+  //   semester: "2",
+  //   selected: false,
+  // },
   {
     name: "Συστημική Θεωρία",
     type: "Υποχρεωτικό (Υ)",
@@ -412,13 +412,13 @@ export const hardcoded = [
     semester: "8",
     selected: false,
   },
-  {
-    name: "Πρακτική Άσκηση",
-    type: "Υποχρεωτικό (Υ)",
-    ects: "8",
-    semester: "8",
-    selected: false,
-  },
+  // {
+  //   name: "Πρακτική Άσκηση",
+  //   type: "Υποχρεωτικό (Υ)",
+  //   ects: "8",
+  //   semester: "8",
+  //   selected: false,
+  // },
   {
     name: "Σχεδίαση για Αειφορία και Κυκλική Οικονομία",
     type: "Υποχρεωτικό Επιλογής Κατεύθυνσης 3 (ΥΕΚ3)",

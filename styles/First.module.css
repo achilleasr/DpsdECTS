@@ -56,30 +56,118 @@
 }
 
 .container {
-    /* border: red solid 2px; */
     width: 45%;
     float: left;
     margin: 10px;
-
-    /* height:300px;
-
-    overflow-y:scroll; */
 }
+
+
+.containerRight {
+    width: 50%;
+    margin: 10px;
+    position: fixed;
+    right: 2px;
+    top:30px;
+    /* overflow-y: scroll; */
+}
+
 
 
 
 .ects {
-    position: fixed;
-    top:30px;
-    font-size: 5em;
+    /* position: fixed; */
+    /* top:30px; */
+    font-size: 3.3em;
     margin: 20px;
 }
 .ects2 {
-    position: fixed;
-    top: 130px;
-    font-size: 40px;
+    /* position: fixed; */
+    /* top: 130px; */
+    font-size: 30px;
     margin: 20px;
 }
+.ectsPassed {
+    /* position: fixed; */
+    /* top:30px; */
+    /* font-size: 18.3em; */
+    margin: 20px;
+}
+
+
+
+
+.innerStart {
+    text-align: left;
+    /* border: black 2px solid; */
+    width: 100%;
+    float: right;
+}
+
+.innerEnd {
+    text-align: right;
+}
+
+
+.additionContainer{
+    /* border: red solid 2px; */
+    font-size: 14px;
+    /* width:10%; */
+    /* background: rgb(143, 175, 188); */
+    margin-left:70px;
+    margin-right:20px;
+    margin-bottom: 6px;
+}
+
+.additionEcts{
+    width: 10%;
+    font-size: 16px;
+    text-align: right;
+    /* float: right;
+    margin-left: 50%;
+    margin-right: 50%; */
+}
+.additionName{
+    float: right;
+    /* background: grey; */
+    white-space: nowrap;
+    width:85%;
+    
+    height: 20px;
+    overflow-x: hidden;
+}
+
+.result1Left{
+    margin-left:70px;
+    margin-right:20px;
+    font-size: 20px;
+    width: 8%;
+    text-align: right;
+    float: left;
+    /* background: rosybrown; */
+}
+
+.result1Right{
+    /* margin-left:65px; */
+    font-size: 16px;
+    /* float: right; */
+    width: 65%;
+    overflow-x: hidden;
+    /* background: rgb(15, 157, 67); */
+}
+
+.line{
+    margin-top: -20px;
+    /* margin-right:20px;
+    margin-left:20px; */
+}
+
+
+.smiley{
+    width:80%;
+}
+
+
+
 
 @media (min-width:550px) and (max-width: 850px) {
     .ects {
@@ -97,34 +185,49 @@
         margin: 8px;
     }
     .ects {
-        position: fixed;
-        background: white;
+        /* position: fixed; */
+        /* background: white;
         border: 4px white solid;
-        border-radius: 12px;
-        top: 0px;
-        right:10px;
+        border-radius: 12px; */
+        /* top: 0px; */
+        /* right:10px; */
         font-size: 1em;
     }
     .ects2 {
-        position: fixed;
-        background: white;
+        /* position: fixed; */
+        /* background: white;
         border: 4px white solid;
-        border-radius: 12px;
-        top: 30px;
-        right:10px;
+        border-radius: 12px; */
+        /* top: 30px; */
+        /* right:10px; */
         font-size: 10px;
     }
-}
 
+    .containerRight {
+        width: 50%;
+        background: rgba(255, 255, 255, 0.623);
+        border: 4px rgba(255, 255, 255, 0.374) solid;
+        border-radius: 12px;
+        /* margin: 10px; */
+        position: fixed;
+        right: 2px;
+        top:30px;
+        /* overflow-y: scroll; */
+    }
 
-
-.innerStart {
-    text-align: left;
-    /* border: black 2px solid; */
-    width: 100%;
-    float: right;
-}
-
-.innerEnd {
-    text-align: right;
+    .additionContainer{
+        /* border: red solid 2px; */
+        /* font-size: 14px; */
+        width:80%;
+        right:0px;
+        /* position: fixed; */
+        /* top: 40px; */
+        /* border-radius: 12px;
+        background: white;
+        border: 4px white solid; */
+        /* margin-left:70px; */
+        /* margin-right:20px; */
+        /* margin-top: 6px; */
+        margin:0px;
+    }
 }

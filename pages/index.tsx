@@ -75,7 +75,7 @@ export default function Home() {
           {lessonsState.map((lesson) => {
             return (
               <div>
-                {(lesson.selected == false) &
+                {(lesson.selected == false) &&
                 (lesson.type == "Υποχρεωτικό (Υ)") ? (
                   <div className={styles.additionContainer}>
                     <div className={styles.additionName}>{lesson.name}</div>

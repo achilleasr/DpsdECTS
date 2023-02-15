@@ -35,7 +35,7 @@ export default function Home() {
     let num = 0;
     for (let i = 0; i < lessonsState.length; i++) {
       if (
-        (lessonsState[i].selected == false) &
+        (lessonsState[i].selected == false) &&
         (lessonsState[i].type == "Υποχρεωτικό (Υ)")
       ) {
         num += parseInt(lessonsState[i].ects);

@@ -9,8 +9,10 @@ import { hardcoded } from "components/hardcoded.js";
 // import smiley from "/favicon.ico"; import { parseCookies } from 'nookies';
 
 function Home() {
-  console.log("Init Ects: " + localStorage.getItem("ects"));
-  console.log(JSON.stringify(localStorage.getItem("lessonsState")));
+  // console.log("Init Ects: " + localStorage.getItem("ects"));
+  if (typeof window !== "undefined") {
+    console.log(localStorage.getItem("lessonsState"));
+  }
   let p = [1, 2];
   let lessons = [];
   const [lessonsState, setLessonsState] = useState(hardcoded);
@@ -26,6 +28,10 @@ function Home() {
     }
     // console.log(num);
     setEcts(num);
+
+    // localStorage.setItem("lessonsState", JSON.stringify(lessonsState));
+    // localStorage.setItem("ects", ects);
+    // console.log(ects);
     // window.localStorage.setItem("myKey", ects);
     // const savedValue = window.localStorage.getItem("myKey");
     // if (savedValue) {
@@ -41,6 +47,17 @@ function Home() {
   //   }
   // };
 
+  useEffect(() => {
+    const leState = JSON.parse(localStorage.getItem("lessonsState"));
+    if (leState) {
+      setLessonsState(leState);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("lessonsState", JSON.stringify(lessonsState));
+  }, [lessonsState]);
+
   const calculateMandatory = () => {
     let num = 0;
     for (let i = 0; i < lessonsState.length; i++) {
@@ -54,10 +71,10 @@ function Home() {
     return num;
   };
 
-  useEffect(() => {
-    localStorage.setItem("lessonsState", lessonsState);
-    localStorage.setItem("ects",ects);
-  }, [lessonsState]);
+  // useEffect(() => {
+  //   localStorage.setItem("lessonsState", JSON.stringify(lessonsState));
+  //   localStorage.setItem("ects",ects);
+  // }, [lessonsState]);
 
   return (
     <>
@@ -156,6 +173,5 @@ function Home() {
 //     initialEcts: cookies.ects,
 //   };
 // };
-
 
 export default Home;

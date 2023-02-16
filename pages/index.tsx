@@ -49,16 +49,16 @@ function Home() {
   //   }
   // };
 
-  useEffect(() => {
-    if (localStorage.getItem("lessonsState") != null) {
-      const leState = JSON.parse(localStorage.getItem("lessonsState"));
-      setLessonsState(leState);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("lessonsState") != null) {
+  //     const leState = JSON.parse(localStorage.getItem("lessonsState"));
+  //     setLessonsState(leState);
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    localStorage.setItem("lessonsState", JSON.stringify(lessonsState));
-  }, [lessonsState]);
+  // useEffect(() => {
+  //   localStorage.setItem("lessonsState", JSON.stringify(lessonsState));
+  // }, [lessonsState]);
 
   const calculateMandatory = () => {
     let num = 0;

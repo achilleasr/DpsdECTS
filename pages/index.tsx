@@ -50,7 +50,7 @@ function Home() {
   // };
 
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem("lessonsState")) != null) {
+    if (localStorage.getItem("lessonsState") != null) {
       const leState = JSON.parse(localStorage.getItem("lessonsState"));
       setLessonsState(leState);
     }

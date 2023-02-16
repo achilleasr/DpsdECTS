@@ -3,24 +3,13 @@ import styles from "styles/First.module.css";
 import Lesson from "components/lesson.js";
 import React, { useState, useEffect, useCallback } from "react";
 import { hardcoded } from "components/hardcoded.js";
-// import { saveAs } from "file-saver";
-
-// import Cookie from "js-cookie";
-// import {parseCookies} from "nookies"
-// import {parseCookies} from "../lib/parseCookies";
-// import smiley from "/favicon.ico"; import { parseCookies } from 'nookies';
-
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import Link from "next/link";
+// import Link from '@material-ui/core/Link';
 function Home() {
-  // console.log("Init Ects: " + localStorage.getItem("ects"));
-  if (typeof window !== "undefined") {
-    console.log(localStorage.getItem("lessonsState"));
-  }
-  let p = [1, 2];
-  let lessons = [];
   const [lessonsState, setLessonsState] = useState(hardcoded);
   const [ects, setEcts] = useState(0);
 
-  // console.log(hardcoded);
   const calculateEcts = () => {
     let num = 0;
     for (let i = 0; i < lessonsState.length; i++) {
@@ -28,37 +17,9 @@ function Home() {
         num += parseInt(lessonsState[i].ects);
       }
     }
-    // console.log(num);
     setEcts(num);
 
-    // localStorage.setItem("lessonsState", JSON.stringify(lessonsState));
-    // localStorage.setItem("ects", ects);
-    // console.log(ects);
-    // window.localStorage.setItem("myKey", ects);
-    // const savedValue = window.localStorage.getItem("myKey");
-    // if (savedValue) {
-    //   console.log(savedValue);
-    // }
   };
-
-  // const handleClick = (e) => {
-  //   if (e.type === 'click') {
-  //     calculateEcts();
-  //   } else if (e.type === 'contextmenu') {
-  //     console.log('Right click');
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (localStorage.getItem("lessonsState") != null) {
-  //     const leState = JSON.parse(localStorage.getItem("lessonsState"));
-  //     setLessonsState(leState);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem("lessonsState", JSON.stringify(lessonsState));
-  // }, [lessonsState]);
 
   const calculateMandatory = () => {
     let num = 0;
@@ -73,18 +34,6 @@ function Home() {
     return num;
   };
 
-  // const calculateMandatory = () => {
-  //   let blob = new Blob(["Hello, world!"], {
-  //     type: "text/plain;charset=utf-8",
-  //   });
-  //   FileSaver.saveAs(blob, "hello world.txt");
-  // };
-
-  // useEffect(() => {
-  //   localStorage.setItem("lessonsState", JSON.stringify(lessonsState));
-  //   localStorage.setItem("ects",ects);
-  // }, [lessonsState]);
-
   return (
     <>
       <Head>
@@ -95,11 +44,15 @@ function Home() {
       </Head>
 
       <main>
+        
+        <Link href="/programme">
+          <CalendarMonthIcon className={styles.calendarIcon}/>
+        </Link>
+
         <div className={styles.container}>
           {lessonsState.map((lesson) => {
             return (
               <div>
-                {/* {lesson.semester == 3? (<div>s3</div>):(<div>s</div>)} */}
                 <Lesson data={lesson} onClick={calculateEcts} />
               </div>
             );
@@ -153,9 +106,13 @@ function Home() {
       </main>
 
       <style jsx global>{`
+        :root {
+          --cornerDist: 40px;
+        }
         html,
         body {
           max-width: 100vw;
+          overflow-y: overlay;
           // overflow-x: hidden;
         }
         body {
@@ -173,14 +130,5 @@ function Home() {
     </>
   );
 }
-
-// Home.getInitialProps = async ({ req }) => {
-//   const cookies = parseCookies(req);
-
-//   return {
-//     initialLessonsState: cookies.lessonsState,
-//     initialEcts: cookies.ects,
-//   };
-// };
 
 export default Home;

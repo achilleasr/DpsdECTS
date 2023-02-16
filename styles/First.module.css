@@ -8,6 +8,7 @@
     src: url('/fonts/Geom Light.ttf');
 }
 
+
 .box {
     color: grey;
     /* border: black solid 2px; */
@@ -162,7 +163,15 @@
     width:40%;
 }
 
-
+.calendarIcon{
+    font-size:60px;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: var(--cornerDist);
+    right: var(--cornerDist);
+    z-index: 3;
+}
 
 
 @media (min-width:550px) and (max-width: 850px) {

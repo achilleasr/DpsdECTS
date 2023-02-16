@@ -3,7 +3,7 @@ import styles from "styles/First.module.css";
 import Lesson from "components/lesson.js";
 import React, { useState, useEffect, useCallback } from "react";
 import { hardcoded } from "components/hardcoded.js";
-import { saveAs } from "file-saver";
+// import { saveAs } from "file-saver";
 
 // import Cookie from "js-cookie";
 // import {parseCookies} from "nookies"

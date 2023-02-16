@@ -3,6 +3,8 @@ import styles from "styles/First.module.css";
 import Lesson from "components/lesson.js";
 import React, { useState, useEffect, useCallback } from "react";
 import { hardcoded } from "components/hardcoded.js";
+import FileSaver from "file-saver";
+
 // import Cookie from "js-cookie";
 // import {parseCookies} from "nookies"
 // import {parseCookies} from "../lib/parseCookies";
@@ -48,8 +50,8 @@ function Home() {
   // };
 
   useEffect(() => {
-    const leState = JSON.parse(localStorage.getItem("lessonsState"));
-    if (leState) {
+    if (JSON.parse(localStorage.getItem("lessonsState")) != null) {
+      const leState = JSON.parse(localStorage.getItem("lessonsState"));
       setLessonsState(leState);
     }
   }, []);
@@ -70,6 +72,13 @@ function Home() {
     }
     return num;
   };
+
+  // const calculateMandatory = () => {
+  //   let blob = new Blob(["Hello, world!"], {
+  //     type: "text/plain;charset=utf-8",
+  //   });
+  //   FileSaver.saveAs(blob, "hello world.txt");
+  // };
 
   // useEffect(() => {
   //   localStorage.setItem("lessonsState", JSON.stringify(lessonsState));

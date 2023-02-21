@@ -73,7 +73,7 @@
     margin: 10px;
     position: fixed;
     right: 2px;
-    top:30px;
+    top: 30px;
     /* overflow-y: scroll; */
 }
 
@@ -86,12 +86,14 @@
     font-size: 3.3em;
     margin: 20px;
 }
+
 .ects2 {
     /* position: fixed; */
     /* top: 130px; */
     font-size: 30px;
     margin: 20px;
 }
+
 .ectsPassed {
     /* position: fixed; */
     /* top:30px; */
@@ -105,17 +107,17 @@
 
 
 
-.additionContainer{
+.additionContainer {
     /* border: red solid 2px; */
     font-size: 14px;
     /* width:10%; */
     /* background: rgb(143, 175, 188); */
-    margin-left:70px;
-    margin-right:20px;
+    margin-left: 70px;
+    margin-right: 20px;
     margin-bottom: 6px;
 }
 
-.additionEcts{
+.additionEcts {
     width: 10%;
     font-size: 16px;
     text-align: right;
@@ -123,19 +125,20 @@
     margin-left: 50%;
     margin-right: 50%; */
 }
-.additionName{
+
+.additionName {
     float: right;
     /* background: grey; */
     white-space: nowrap;
-    width:85%;
-    
+    width: 85%;
+
     height: 20px;
     overflow-x: hidden;
 }
 
-.result1Left{
-    margin-left:70px;
-    margin-right:20px;
+.result1Left {
+    margin-left: 70px;
+    margin-right: 20px;
     font-size: 20px;
     width: 8%;
     text-align: right;
@@ -143,7 +146,7 @@
     /* background: rosybrown; */
 }
 
-.result1Right{
+.result1Right {
     /* margin-left:65px; */
     font-size: 16px;
     /* float: right; */
@@ -152,19 +155,19 @@
     /* background: rgb(15, 157, 67); */
 }
 
-.line{
+.line {
     margin-top: -20px;
     /* margin-right:20px;
     margin-left:20px; */
 }
 
 
-.smiley{
-    width:40%;
+.smiley {
+    width: 40%;
 }
 
-.calendarIcon{
-    font-size:60px;
+.calendarIcon {
+    font-size: 60px;
     width: 60px;
     height: 60px;
     position: fixed;
@@ -178,6 +181,7 @@
     .ects {
         font-size: 2.2em;
     }
+
     .ects2 {
         font-size: 20px;
     }
@@ -189,6 +193,7 @@
         float: left;
         margin: 8px;
     }
+
     .ects {
         /* position: fixed; */
         /* background: white;
@@ -198,6 +203,7 @@
         /* right:10px; */
         font-size: 1em;
     }
+
     .ects2 {
         /* position: fixed; */
         /* background: white;
@@ -216,15 +222,15 @@
         /* margin: 10px; */
         position: fixed;
         right: 2px;
-        top:30px;
+        top: 30px;
         /* overflow-y: scroll; */
     }
 
-    .additionContainer{
+    .additionContainer {
         /* border: red solid 2px; */
         /* font-size: 14px; */
-        width:80%;
-        right:0px;
+        width: 80%;
+        right: 0px;
         /* position: fixed; */
         /* top: 40px; */
         /* border-radius: 12px;
@@ -233,6 +239,6 @@
         /* margin-left:70px; */
         /* margin-right:20px; */
         /* margin-top: 6px; */
-        margin:0px;
+        margin: 0px;
     }
 }

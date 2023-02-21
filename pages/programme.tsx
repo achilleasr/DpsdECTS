@@ -13,14 +13,14 @@ export default function Programme() {
   const days = ["Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή"];
   const days_idx = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
-  const hours = (number, type) => {
+  const hours = (number1: number, type: string) => {
     let s = "";
-    s += String(number).padStart(2, "0") + ".00 - ";
-    s += String(number + 1).padStart(2, "0") + ".00";
+    s += String(number1).padStart(2, "0") + ".00 - ";
+    s += String(number1 + 1).padStart(2, "0") + ".00";
     return s;
   };
 
-  const getIndex = (number) => {
+  const getIndex = (number: number) => {
     number--;
     let idx = Math.floor(number / 6) + (number % 6) * 12;
     return idx;
@@ -79,7 +79,7 @@ export default function Programme() {
     makeProgramme();
   }, []);
 
-  const flixBox = (dayList) => {
+  const flixBox = (dayList: any) => {
     let listt = ["-1"];
     if (dayList) {
       listt = dayList;

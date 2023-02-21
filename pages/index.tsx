@@ -52,7 +52,7 @@ function Home() {
         <div className={styles.container}>
           {lessonsState.map(lesson => {
             return (
-              <div key={lesson.Name}>
+              <div key={lesson.name}>
                 <Lesson data={lesson} onClick={calculateEcts} />
               </div>
             );

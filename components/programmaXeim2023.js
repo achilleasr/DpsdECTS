@@ -2,7 +2,7 @@ export const p_X23 = [
   {
     Name: "Στούντιο 2Α-Β",
     Semester: 2,
-    Room: Ι11,
+    Room: "Ι11",
     Code: 2306,
     Mon: [9, 10, 11],
     Tue: [12, 13, 14],
@@ -13,7 +13,7 @@ export const p_X23 = [
   {
     Name: "Στούντιο 2Α-A",
     Semester: 2,
-    Room: Ι11,
+    Room: "Ι11",
     Code: 2306,
     Mon: [12, 13, 14],
     Tue: [9, 10, 11],
@@ -24,7 +24,7 @@ export const p_X23 = [
   {
     Name: "Στούντιο 2Β-Α",
     Semester: 2,
-    Room: Ι11,
+    Room: "Ι11",
     Code: 3500,
     Mon: [16, 17],
     Tue: [],
@@ -35,7 +35,7 @@ export const p_X23 = [
   {
     Name: "Στούντιο 2Β-Β",
     Semester: 2,
-    Room: Ι11,
+    Room: "Ι11",
     Code: 3500,
     Mon: [18, 19],
     Tue: [],
@@ -46,7 +46,7 @@ export const p_X23 = [
   {
     Name: "Αλλ. Ανθρ.-Υπολ. (Θ)",
     Semester: 4,
-    Room: Π11,
+    Room: "Π11",
     Code: 6104,
     Mon: [9, 10, 11],
     Tue: [],
@@ -57,7 +57,7 @@ export const p_X23 = [
   {
     Name: "Σχεδίαση με ΗΥ (Ε) -Α",
     Semester: 4,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 5153,
     Mon: [12, 13],
     Tue: [],
@@ -68,7 +68,7 @@ export const p_X23 = [
   {
     Name: "Σχεδίαση με ΗΥ (Ε) -Β",
     Semester: 4,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 5153,
     Mon: [14, 15],
     Tue: [],
@@ -79,7 +79,7 @@ export const p_X23 = [
   {
     Name: "Υλικά (Θ)",
     Semester: 6,
-    Room: Π11,
+    Room: "Π11",
     Code: 4356,
     Mon: [12, 13],
     Tue: [9],
@@ -90,7 +90,7 @@ export const p_X23 = [
   {
     Name: "Αν.& Κατ. Πρ. ΗΥ (Θ)",
     Semester: 6,
-    Room: Β02,
+    Room: "Β02",
     Code: 8452,
     Mon: [15, 16, 17],
     Tue: [],
@@ -101,7 +101,7 @@ export const p_X23 = [
   {
     Name: "Αλγ. Δομές Δεδομένων",
     Semester: 8,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 7055,
     Mon: [9, 10, 11],
     Tue: [],
@@ -112,7 +112,7 @@ export const p_X23 = [
   {
     Name: "Ρομποτική (Θ)",
     Semester: 8,
-    Room: Β12,
+    Room: "Β12",
     Code: 8253,
     Mon: [12, 13],
     Tue: [],
@@ -123,7 +123,7 @@ export const p_X23 = [
   {
     Name: "Ρομποτική (Ε)",
     Semester: 8,
-    Room: Β12,
+    Room: "Β12",
     Code: 8253,
     Mon: [14, 15],
     Tue: [],
@@ -134,7 +134,7 @@ export const p_X23 = [
   {
     Name: "Πρακτική Άσκηση",
     Semester: 8,
-    Room: Β12,
+    Room: "Β12",
     Code: 8902,
     Mon: [16],
     Tue: [],
@@ -145,7 +145,7 @@ export const p_X23 = [
   {
     Name: "Τεχνικό Σχέδιο (Θ)",
     Semester: 8,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 4502,
     Mon: [17, 18],
     Tue: [],
@@ -156,7 +156,7 @@ export const p_X23 = [
   {
     Name: "Τεχνικό Σχέδιο (Ε)",
     Semester: 8,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 4502,
     Mon: [19, 20],
     Tue: [],
@@ -167,7 +167,7 @@ export const p_X23 = [
   {
     Name: "Αγγλικά-Ορολογία -Α",
     Semester: 2,
-    Room: Β02,
+    Room: "Β02",
     Code: 2354,
     Mon: [],
     Tue: [16, 17, 18],
@@ -178,7 +178,7 @@ export const p_X23 = [
   {
     Name: "Συστημική Θεωρία",
     Semester: 2,
-    Room: Π11,
+    Room: "Π11",
     Code: 4053,
     Mon: [],
     Tue: [19, 20],
@@ -189,7 +189,7 @@ export const p_X23 = [
   {
     Name: "Αλλ. Ανθρ.-Υπολ. (Ε) - Α",
     Semester: 4,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 6104,
     Mon: [],
     Tue: [9, 10],
@@ -200,7 +200,7 @@ export const p_X23 = [
   {
     Name: "Αλλ. Ανθρ.-Υπολ. (Ε) - Β",
     Semester: 4,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 6104,
     Mon: [],
     Tue: [11, 12],
@@ -211,7 +211,7 @@ export const p_X23 = [
   {
     Name: "Σχεδίαση με ΗΥ (Ε) -Φρ.",
     Semester: 4,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 5153,
     Mon: [],
     Tue: [13, 14],
@@ -222,7 +222,7 @@ export const p_X23 = [
   {
     Name: "Υλικά (Ε)",
     Semester: 6,
-    Room: Π11,
+    Room: "Π11",
     Code: 4356,
     Mon: [],
     Tue: [10, 11],
@@ -233,7 +233,7 @@ export const p_X23 = [
   {
     Name: "Αν.Κατ.Πρ.ΗΥ(Ε)",
     Semester: 6,
-    Room: ΗΥ / Β02,
+    Room: "ΗΥ/Β02",
     Code: 8452,
     Mon: [],
     Tue: [13, 14],
@@ -244,7 +244,7 @@ export const p_X23 = [
   {
     Name: "Σχ.&Τεχ. Παραγωγής(Θ)",
     Semester: 8,
-    Room: Β12,
+    Room: "Β12",
     Code: 9503,
     Mon: [],
     Tue: [9, 10],
@@ -255,7 +255,7 @@ export const p_X23 = [
   {
     Name: "Σχ.&Τεχ. Παραγωγής(Ε)",
     Semester: 8,
-    Room: Β12,
+    Room: "Β12",
     Code: 9503,
     Mon: [],
     Tue: [11, 12],
@@ -266,7 +266,7 @@ export const p_X23 = [
   {
     Name: "Εικονική Πραγματ. (Θ)",
     Semester: 8,
-    Room: Β13,
+    Room: "Β13",
     Code: 9554,
     Mon: [],
     Tue: [13, 14],
@@ -277,7 +277,7 @@ export const p_X23 = [
   {
     Name: "Εικονική Πραγματ. (Ε)",
     Semester: 8,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 9554,
     Mon: [],
     Tue: [15, 16],
@@ -288,7 +288,7 @@ export const p_X23 = [
   {
     Name: "Σχεδ. Φορητές Συσκ.(Θ)",
     Semester: 8,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 8056,
     Mon: [],
     Tue: [17, 18],
@@ -299,7 +299,7 @@ export const p_X23 = [
   {
     Name: "Σχεδ. Φορητές Συσκ.(Ε)",
     Semester: 8,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 8056,
     Mon: [],
     Tue: [19, 20],
@@ -310,7 +310,7 @@ export const p_X23 = [
   {
     Name: "Τεχν. Μεθ. Προγρ. (Θ)",
     Semester: 2,
-    Room: Π11,
+    Room: "Π11",
     Code: 4203,
     Mon: [],
     Tue: [],
@@ -321,7 +321,7 @@ export const p_X23 = [
   {
     Name: "Τεχν. Μεθ. Προγρ. (Ε)-Α",
     Semester: 2,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 4203,
     Mon: [],
     Tue: [],
@@ -332,7 +332,7 @@ export const p_X23 = [
   {
     Name: "Τεχν. Μεθ. Προγρ. (Ε)-Β",
     Semester: 2,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 4203,
     Mon: [],
     Tue: [],
@@ -343,7 +343,7 @@ export const p_X23 = [
   {
     Name: "Σχεδίαση με ΗΥ (Θ)",
     Semester: 4,
-    Room: Β02,
+    Room: "Β02",
     Code: 5153,
     Mon: [],
     Tue: [],
@@ -354,7 +354,7 @@ export const p_X23 = [
   {
     Name: "Θεωρία Πολύπλ. Οργαν.",
     Semester: 4,
-    Room: Π11,
+    Room: "Π11",
     Code: 7258,
     Mon: [],
     Tue: [],
@@ -365,7 +365,7 @@ export const p_X23 = [
   {
     Name: "Οικοδ. Διοίκηση Μαρκών",
     Semester: 6,
-    Room: Β02,
+    Room: "Β02",
     Code: 9905,
     Mon: [],
     Tue: [],
@@ -376,7 +376,7 @@ export const p_X23 = [
   {
     Name: "Συστ. Υποστ. Αποφ.",
     Semester: 8,
-    Room: Β12,
+    Room: "Β12",
     Code: 9453,
     Mon: [],
     Tue: [],
@@ -387,7 +387,7 @@ export const p_X23 = [
   {
     Name: "Σχεδ. Προσθ. Κατασκ.",
     Semester: 8,
-    Room: Β13,
+    Room: "Β13",
     Code: 10152,
     Mon: [],
     Tue: [],
@@ -398,7 +398,7 @@ export const p_X23 = [
   {
     Name: "Ακαδ. Αγγλικά Ι",
     Semester: 8,
-    Room: Β12,
+    Room: "Β12",
     Code: 4011,
     Mon: [],
     Tue: [],
@@ -409,7 +409,7 @@ export const p_X23 = [
   {
     Name: "Σχεδίαση Πληροφορίας",
     Semester: 8,
-    Room: Β13,
+    Room: "Β13",
     Code: 8802,
     Mon: [],
     Tue: [],
@@ -420,7 +420,7 @@ export const p_X23 = [
   {
     Name: "Ακαδ. Αγγλικά ΙΙ",
     Semester: 8,
-    Room: Β12,
+    Room: "Β12",
     Code: 10200,
     Mon: [],
     Tue: [],
@@ -431,7 +431,7 @@ export const p_X23 = [
   {
     Name: "Ιστορία Design II",
     Semester: 2,
-    Room: Β02,
+    Room: "Β02",
     Code: 2252,
     Mon: [],
     Tue: [],
@@ -442,7 +442,7 @@ export const p_X23 = [
   {
     Name: "Αγγλικά-Ορολογία -Β",
     Semester: 2,
-    Room: Β02,
+    Room: "Β02",
     Code: 2354,
     Mon: [],
     Tue: [],
@@ -453,7 +453,7 @@ export const p_X23 = [
   {
     Name: "Μαθηματικά ΙI",
     Semester: 2,
-    Room: Π11,
+    Room: "Π11",
     Code: 3453,
     Mon: [],
     Tue: [],
@@ -464,7 +464,7 @@ export const p_X23 = [
   {
     Name: "Γνωστική Επιστήμη",
     Semester: 4,
-    Room: Π11,
+    Room: "Π11",
     Code: 8154,
     Mon: [],
     Tue: [],
@@ -475,7 +475,7 @@ export const p_X23 = [
   {
     Name: "Διαδραστική Σχεδ. (Ε)",
     Semester: 6,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 4153,
     Mon: [],
     Tue: [],
@@ -486,7 +486,7 @@ export const p_X23 = [
   {
     Name: "Στούντιο 6",
     Semester: 6,
-    Room: Ι12,
+    Room: "Ι12",
     Code: 6303,
     Mon: [],
     Tue: [],
@@ -497,7 +497,7 @@ export const p_X23 = [
   {
     Name: "Σχεδίαση για όλους",
     Semester: 8,
-    Room: Β13,
+    Room: "Β13",
     Code: 7154,
     Mon: [],
     Tue: [],
@@ -508,7 +508,7 @@ export const p_X23 = [
   {
     Name: "Αισθ.Συναισθ. Σχεδ. (Θ)",
     Semester: 8,
-    Room: Β13,
+    Room: "Β13",
     Code: 10302,
     Mon: [],
     Tue: [],
@@ -519,7 +519,7 @@ export const p_X23 = [
   {
     Name: "Αισθ.Συναισθ. Σχεδ. (Ε)",
     Semester: 8,
-    Room: Β13,
+    Room: "Β13",
     Code: 10302,
     Mon: [],
     Tue: [],
@@ -530,7 +530,7 @@ export const p_X23 = [
   {
     Name: "Σχεδ. Παγκ. Ιστό(Θ)",
     Semester: 8,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 6404,
     Mon: [],
     Tue: [],
@@ -541,7 +541,7 @@ export const p_X23 = [
   {
     Name: "Σχεδ. Παγκ. Ιστό(Ε)",
     Semester: 8,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 6404,
     Mon: [],
     Tue: [],
@@ -552,7 +552,7 @@ export const p_X23 = [
   {
     Name: "Στούντιο 4",
     Semester: 4,
-    Room: Ι12,
+    Room: "Ι12",
     Code: 4304,
     Mon: [],
     Tue: [],
@@ -563,7 +563,7 @@ export const p_X23 = [
   {
     Name: "Διαδραστική Σχεδ. (Θ)",
     Semester: 6,
-    Room: Π11,
+    Room: "Π11",
     Code: 4153,
     Mon: [],
     Tue: [],
@@ -574,7 +574,7 @@ export const p_X23 = [
   {
     Name: "Ιστ. Τέχνης Ι",
     Semester: 8,
-    Room: Β02,
+    Room: "Β02",
     Code: 5053,
     Mon: [],
     Tue: [],
@@ -585,7 +585,7 @@ export const p_X23 = [
   {
     Name: "Ψηφ. Πολιτιστική Κληρ.",
     Semester: 8,
-    Room: Β02,
+    Room: "Β02",
     Code: 7901,
     Mon: [],
     Tue: [],
@@ -596,7 +596,7 @@ export const p_X23 = [
   {
     Name: "Ψηφ. Μορφές Αφήγ. (Θ)",
     Semester: 8,
-    Room: Β12,
+    Room: "Β12",
     Code: 7554,
     Mon: [],
     Tue: [],
@@ -607,7 +607,7 @@ export const p_X23 = [
   {
     Name: "Ψηφ. Μορφές Αφήγ. (Ε)",
     Semester: 8,
-    Room: ΗΥ,
+    Room: "ΗΥ",
     Code: 7554,
     Mon: [],
     Tue: [],

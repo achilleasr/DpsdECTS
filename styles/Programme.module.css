@@ -18,9 +18,10 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 100px repeat(5, 1fr);
+    grid-template-columns: 110px repeat(5, var(--gWidth));
     grid-template-rows: 40px repeat(12, 40px);
-    grid-gap: 6px;
+    grid-gap: 5px;
+    font-size: 20px;
 }
 
 
@@ -28,10 +29,57 @@
     background-color: #c5bfbf;
     border-radius: 4px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.cellStart {
+.cellStartTop {
     background-color: #be1717;
+    color: antiquewhite;
     border-radius: 4px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.cellStartLeft {
+    background-color: #be1717;
+    color: antiquewhite;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.flixBox{
+    display:flex;
+    background-color: #c5bfbf;
+    justify-content: space-around;
+    background-color: #c5bfbf;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    /* margin: 2px; */
+    width: var(--gWidth);
+}
+
+.flixItem{
+    display:flex;
+    background-color: rgb(204, 219, 247);
+    margin: 4px;
+    flex:1;
+    border-radius: 3px;
+    font-size: 14px;
+    align-items: center;
+    /* justify-content: center; */
+    box-shadow: #0000001b 2px 2px 4px;
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding: 2px;
 }

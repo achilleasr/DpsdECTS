@@ -1,13 +1,99 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "styles/Programme.module.css";
 // import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
+import { p_X23 } from "components/programmaXeim2023.js";
 
-import { Container, Row, Col } from "reactstrap";
+// import { Container, Row, Col } from "reactstrap";
 
 export default function Programme() {
+  const [programme, setProgramme] = useState([]);
+  const days = ["Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή"];
+  const days_idx = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  const hours = (number, type) => {
+    let s = "";
+    s += String(number).padStart(2, "0") + ".00 - ";
+    s += String(number + 1).padStart(2, "0") + ".00";
+    return s;
+  };
+
+  const getIndex = (number) => {
+    number--;
+    let idx = Math.floor(number / 6) + (number % 6) * 12;
+    return idx;
+  };
+
+  const makeProgramme = () => {
+    let newP = Array(60).fill([" "]);
+    p_X23.map((classe) => {
+      classe.Mon.map((hour) => {
+        let idx = hour - 9; 
+        if (newP[idx] == " ") {
+          newP[idx] = [classe.Name];
+        } else {
+          newP[idx] = [...newP[idx], classe.Name];
+        }
+      });
+      classe.Tue.map((hour) => {
+        let idx = hour - 9 + 12; 
+        if (newP[idx] == " ") {
+          newP[idx] = [classe.Name];
+        } else {
+          newP[idx] = [...newP[idx], classe.Name];
+        }
+      });
+      classe.Wed.map((hour) => {
+        let idx = hour - 9 + 24; 
+        if (newP[idx] == " ") {
+          newP[idx] = [classe.Name];
+        } else {
+          newP[idx] = [...newP[idx], classe.Name];
+        }
+      });
+      classe.Thu.map((hour) => {
+        let idx = hour - 9 + 36; 
+        if (newP[idx] == " ") {
+          newP[idx] = [classe.Name];
+        } else {
+          newP[idx] = [...newP[idx], classe.Name];
+        }
+      });
+      classe.Fri.map((hour) => {
+        let idx = hour - 9 + 48; 
+        if (newP[idx] == " ") {
+          newP[idx] = [classe.Name];
+        } else {
+          newP[idx] = [...newP[idx], classe.Name];
+        }
+      });
+    });
+
+    // console.log(newP);
+    setProgramme(newP);
+  };
+
+  useEffect(() => {
+    makeProgramme();
+  }, []);
+
+  const flixBox = (dayList) => {
+    let listt = ["-1"];
+    if (dayList) {
+      listt = dayList;
+    }
+
+    return (
+      <div className={styles.flixBox}>
+        {listt.map((i) => (
+          <div className={styles.flixItem}>{i}</div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <>
       <Head>
@@ -23,23 +109,26 @@ export default function Programme() {
         <div className={styles.gridContainer}>
           <div className={styles.grid}>
             {[...Array(6)].map((_, i) => (
-              <div key={i} className={styles.cellStart}>
-                {i}
+              <div key={i} className={styles.cellStartTop}>
+                {i != 0 ? days[i - 1] : " "}
               </div>
             ))}
-            {[...Array(12 * 6)].map((_, i) => (
-              <div
-                key={i + 6}
-                className={i % 6 != 0 ? styles.cell : styles.cellStart}>
-                {i + 6}
-              </div>
-            ))}
+            {[...Array(12 * 6)].map((_, i) =>
+              i % 6 == 0 ? (
+                <div key={i + 6} className={styles.cellStartLeft}>
+                  {hours(i / 6 + 9, "verbose")}
+                </div>
+              ) : (
+                flixBox(programme[getIndex(i)])
+              )
+            )}
           </div>
         </div>
         Second Page
         <style jsx global>{`
           :root {
             --cornerDist: 40px;
+            --gWidth: 14vw;
           }
           html,
           body {

@@ -50,9 +50,9 @@ function Home() {
         </Link>
 
         <div className={styles.container}>
-          {lessonsState.map((lesson) => {
+          {lessonsState.map(lesson => {
             return (
-              <div>
+              <div key={lesson.Name}>
                 <Lesson data={lesson} onClick={calculateEcts} />
               </div>
             );
@@ -106,9 +106,6 @@ function Home() {
       </main>
 
       <style jsx global>{`
-        :root {
-          --cornerDist: 40px;
-        }
         html,
         body {
           max-width: 100vw;
@@ -120,11 +117,6 @@ function Home() {
           background: white;
           margin: 0px;
           font-family: GeomLight;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
         }
       `}</style>
     </>

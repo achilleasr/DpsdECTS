@@ -29,8 +29,8 @@ export default function Programme() {
 
   const makeProgramme = () => {
     let newP : any[any] = Array(60).fill([" "]);
-    p_X23.map((classe) => {
-      classe.Mon.map((hour) => {
+    p_X23.map(classe => {
+      classe.Mon.map(hour => {
         let idx = hour - 9; 
         if (newP[idx] == " ") {
           newP[idx] = [classe.Name];
@@ -38,7 +38,7 @@ export default function Programme() {
           newP[idx] = [...newP[idx], classe.Name];
         }
       });
-      classe.Tue.map((hour) => {
+      classe.Tue.map(hour => {
         let idx = hour - 9 + 12; 
         if (newP[idx] == " ") {
           newP[idx] = [classe.Name];
@@ -46,7 +46,7 @@ export default function Programme() {
           newP[idx] = [...newP[idx], classe.Name];
         }
       });
-      classe.Wed.map((hour) => {
+      classe.Wed.map(hour => {
         let idx = hour - 9 + 24; 
         if (newP[idx] == " ") {
           newP[idx] = [classe.Name];
@@ -54,7 +54,7 @@ export default function Programme() {
           newP[idx] = [...newP[idx], classe.Name];
         }
       });
-      classe.Thu.map((hour) => {
+      classe.Thu.map(hour => {
         let idx = hour - 9 + 36; 
         if (newP[idx] == " ") {
           newP[idx] = [classe.Name];
@@ -62,7 +62,7 @@ export default function Programme() {
           newP[idx] = [...newP[idx], classe.Name];
         }
       });
-      classe.Fri.map((hour) => {
+      classe.Fri.map(hour => {
         let idx = hour - 9 + 48; 
         if (newP[idx] == " ") {
           newP[idx] = [classe.Name];
@@ -88,8 +88,8 @@ export default function Programme() {
 
     return (
       <div className={styles.flixBox}>
-        {listt.map((i) => (
-          <div className={styles.flixItem}>{i}</div>
+        {listt.map(i => (
+          <div key={i + 200} className={styles.flixItem}>{i}</div>
         ))}
       </div>
     );
@@ -127,26 +127,16 @@ export default function Programme() {
         </div>
         Second Page
         <style jsx global>{`
-          :root {
-            --cornerDist: 40px;
-            --gWidth: 14vw;
-          }
           html,
           body {
             max-width: 100vw;
             overflow-y: overlay;
-            // overflow-x: hidden;
           }
           body {
             color: black;
             background: white;
             margin: 0px;
             font-family: GeomLight;
-          }
-
-          a {
-            color: inherit;
-            text-decoration: none;
           }
         `}</style>
       </main>

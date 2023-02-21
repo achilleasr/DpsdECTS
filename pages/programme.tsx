@@ -8,6 +8,7 @@ import { p_X23 } from "components/programmaXeim2023.js";
 
 // import { Container, Row, Col } from "reactstrap";
 
+
 export default function Programme() {
   const [programme, setProgramme] = useState([]);
   const days = ["Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή"];
@@ -27,7 +28,7 @@ export default function Programme() {
   };
 
   const makeProgramme = () => {
-    let newP = Array(60).fill([" "]);
+    let newP : any[any] = Array(60).fill([" "]);
     p_X23.map((classe) => {
       classe.Mon.map((hour) => {
         let idx = hour - 9; 

@@ -9,6 +9,7 @@
 }
 
 
+
 .box {
     color: grey;
     /* border: black solid 2px; */
@@ -230,6 +231,8 @@
     border-radius: 6px;
     color: black;
 }
+
+
 
 @media (min-width:550px) and (max-width: 850px) {
     .ects {

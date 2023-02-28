@@ -106,10 +106,7 @@ function Home() {
   const router = useRouter();
   const codesProp = router.query.codesProp;
   useEffect(() => {
-    // if (codesProp !== []) {
     calculateEcts();
-    // codesProp = [];
-    // }
   }, []);
 
   return (
@@ -126,7 +123,6 @@ function Home() {
           href={{
             pathname: "/programme",
             query: {
-              // lessonsProp: JSON.stringify(lessonsState),
               codesProp: JSON.stringify(sendCodes()),
             },
           }}

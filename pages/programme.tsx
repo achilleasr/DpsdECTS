@@ -9,8 +9,10 @@ import { useRouter } from "next/router";
 
 export default function Programme() {
   const [programme, setProgramme] = useState([]);
+  const [colors, setColors] = useState([]);
   const days = ["Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή"];
   const days_idx = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
   const router = useRouter();
   const codesProp = router.query.codesProp;
 
@@ -29,6 +31,7 @@ export default function Programme() {
 
   const makeProgramme = () => {
     let newP: any[any] = Array(60).fill([" "]);
+    let newColors: any[any] = Array(60).fill([" "]);
     p_X23.map((classe) => {
       if (codesProp != null) {
         if (codesProp.includes(classe.Code.toString())) {
@@ -36,40 +39,50 @@ export default function Programme() {
             let idx = hour - 9;
             if (newP[idx] == " ") {
               newP[idx] = [classe.Name];
+              newColors[idx] = [classe.Room];
             } else {
               newP[idx] = [...newP[idx], classe.Name];
+              newColors[idx] = [...newColors[idx], classe.Room];
             }
           });
           classe.Tue.map((hour) => {
             let idx = hour - 9 + 12;
             if (newP[idx] == " ") {
               newP[idx] = [classe.Name];
+              newColors[idx] = [classe.Room];
             } else {
               newP[idx] = [...newP[idx], classe.Name];
+              newColors[idx] = [...newColors[idx], classe.Room];
             }
           });
           classe.Wed.map((hour) => {
             let idx = hour - 9 + 24;
             if (newP[idx] == " ") {
               newP[idx] = [classe.Name];
+              newColors[idx] = [classe.Room];
             } else {
               newP[idx] = [...newP[idx], classe.Name];
+              newColors[idx] = [...newColors[idx], classe.Room];
             }
           });
           classe.Thu.map((hour) => {
             let idx = hour - 9 + 36;
             if (newP[idx] == " ") {
               newP[idx] = [classe.Name];
+              newColors[idx] = [classe.Room];
             } else {
               newP[idx] = [...newP[idx], classe.Name];
+              newColors[idx] = [...newColors[idx], classe.Room];
             }
           });
           classe.Fri.map((hour) => {
             let idx = hour - 9 + 48;
             if (newP[idx] == " ") {
               newP[idx] = [classe.Name];
+              newColors[idx] = [classe.Room];
             } else {
               newP[idx] = [...newP[idx], classe.Name];
+              newColors[idx] = [...newColors[idx], classe.Room];
             }
           });
         }
@@ -78,23 +91,81 @@ export default function Programme() {
 
     // console.log(newP);
     setProgramme(newP);
+    setColors(newColors);
   };
 
   useEffect(() => {
     makeProgramme();
   }, []);
 
-  const flixBox = (dayList: any) => {
+  const flixBox = (idx: number) => {
+    const classColor = [
+      styles.color,
+      styles.colorHY,
+      styles.colorKazino,
+      styles.colorPanagoyli,
+      styles.colorB12,
+      styles.colorB13,
+      styles.colorAmfi,
+    ];
+
     let listt = ["-1"];
-    if (dayList) {
-      listt = dayList;
+    let classColor2 = classColor[0];
+    if (programme[idx]) {
+      listt = programme[idx];
     }
+    if (idx < 1) {
+      // console.log(colors);
+    }
+    if (colors[idx] != " ") {
+      // console.log(colors[idx]);
+
+      classColor2 = classColor[2];
+    }
+
+    const choose = (idi: number) => {
+      let s = 0;
+
+      if (colors[idx]) {
+        switch (colors[idx][idi]) {
+          // console.log(colors[idx][idi]);
+          case "ΗΥ":
+            return classColor[1];
+            break;
+          case "Ι11":
+            return classColor[2];
+            break;
+          case "Ι12":
+            return classColor[2];
+            break;
+          case "Π11":
+            return classColor[3];
+            break;
+          case "Β12":
+            return classColor[4];
+            break;
+          case "Β13":
+            return classColor[5];
+            break;
+          case "Β02":
+            return classColor[6];
+            break;
+          case "ΗΥ/Β02":
+            return classColor[6];
+            break;
+          default:
+            return classColor[0];
+        }
+      } else {
+        return classColor[0];
+      }
+    };
 
     return (
       <div className={styles.flixBox}>
-        {listt.map((i) => (
-          <div key={i + 200} className={styles.flixItem}>
-            {i}
+        {listt.map((val, idu) => (
+          <div key={idu + 200} className={`${styles.flixItem} ${choose(idu)}`}>
+            {val}
           </div>
         ))}
       </div>
@@ -105,6 +176,7 @@ export default function Programme() {
     window.print();
     return false;
   };
+
   return (
     <>
       <Head>
@@ -137,7 +209,7 @@ export default function Programme() {
                   {hours(i / 6 + 9, "verbose")}
                 </div>
               ) : (
-                flixBox(programme[getIndex(i)])
+                flixBox(getIndex(i))
               )
             )}
           </div>

@@ -177,6 +177,27 @@
 }
 
 
+.semester {
+    /* border: black solid 2px; */
+    background: lightskyblue;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 10px;
+
+
+}
+
+.semesterSelected {
+    background: red;
+    width: 20px;
+}
+
+.semesterUnselected {
+    background: green;
+    width: 40px;
+}
+
+
 @media (min-width:550px) and (max-width: 850px) {
     .ects {
         font-size: 2.2em;

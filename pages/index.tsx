@@ -2,13 +2,19 @@ import Head from "next/head";
 import styles from "styles/First.module.css";
 import Lesson from "components/lesson.js";
 import React, { useState, useEffect, useCallback } from "react";
-import { hardcoded } from "components/hardcoded.js";
+import {
+  hardcodedSemesterToggles,
+  hardcodedLessons,
+} from "components/hardcoded.js";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import Link from "next/link";
 // import Link from '@material-ui/core/Link';
 function Home() {
-  const [lessonsState, setLessonsState] = useState(hardcoded);
+  const [lessonsState, setLessonsState] = useState(hardcodedLessons);
   const [ects, setEcts] = useState(0);
+  const [semesterToggle, setSemesterToggle] = useState(
+    hardcodedSemesterToggles
+  );
 
   const calculateEcts = () => {
     let num = 0;
@@ -18,7 +24,6 @@ function Home() {
       }
     }
     setEcts(num);
-
   };
 
   const calculateMandatory = () => {
@@ -34,6 +39,39 @@ function Home() {
     return num;
   };
 
+  const semester = (i: number) => {
+    return (
+      <div>
+        {lessonsState.map((lesson) => {
+          return (
+            <div key={lesson.name}>
+              {parseInt(lesson.semester) == i ? (
+                <Lesson data={lesson} onClick={calculateEcts} />
+              ) : (
+                <div></div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
+  const handleClick = (j: number) => {
+    let liss = semesterToggle;
+    liss[j] = !semesterToggle[j];
+
+    for (let i = 0; i < lessonsState.length; i++) {
+      if (parseInt(lessonsState[i].semester) == j + 1) {
+        lessonsState[i].selected = liss[j];
+      }
+    }
+
+    setSemesterToggle(liss);
+    console.log(semesterToggle);
+    // onClick();
+  };
+
   return (
     <>
       <Head>
@@ -44,19 +82,30 @@ function Home() {
       </Head>
 
       <main>
-        
         <Link href="/programme">
-          <CalendarMonthIcon className={styles.calendarIcon}/>
+          <CalendarMonthIcon className={styles.calendarIcon} />
         </Link>
 
         <div className={styles.container}>
-          {lessonsState.map(lesson => {
-            return (
-              <div key={lesson.name}>
-                <Lesson data={lesson} onClick={calculateEcts} />
-              </div>
-            );
-          })}
+          {[...Array(10)].map((_, i) => (
+            <div className={styles.semester}>
+              Εξάμηνο {i + 1}
+              <span>
+                {/* <input type="checkbox" id="a" /> */}
+                <div
+                  onClick={() => handleClick(i)}
+                  className={
+                    semesterToggle[i]
+                      ? styles.semesterSelected
+                      : styles.semesterUnselected
+                  }
+                >
+                  box
+                </div>
+              </span>
+              <div>{semester(i + 1)}</div>
+            </div>
+          ))}
         </div>
 
         <div className={styles.containerRight}>

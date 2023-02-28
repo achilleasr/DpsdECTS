@@ -1,4 +1,4 @@
-export const hardcoded = [
+export const hardcodedLessons = [
   {
     name: "Αγγλικά - Προπαρασκευαστικό",
     code: "1004",
@@ -663,4 +663,18 @@ export const hardcoded = [
     semester: "10",
     selected: false,
   },
+];
+
+
+export const hardcodedSemesterToggles = [
+  false,
+  true,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
 ];

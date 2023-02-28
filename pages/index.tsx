@@ -8,7 +8,9 @@ import {
 } from "components/hardcoded.js";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import Link from "next/link";
-// import Link from '@material-ui/core/Link';
+import Semester from "components/semester.js";
+import { useRouter } from "next/router";
+
 function Home() {
   const [lessonsState, setLessonsState] = useState(hardcodedLessons);
   const [ects, setEcts] = useState(0);
@@ -39,13 +41,13 @@ function Home() {
     return num;
   };
 
-  const semester = (i: number) => {
+  const semester = (k: number) => {
     return (
       <div>
         {lessonsState.map((lesson) => {
           return (
             <div key={lesson.name}>
-              {parseInt(lesson.semester) == i ? (
+              {parseInt(lesson.semester) == k ? (
                 <Lesson data={lesson} onClick={calculateEcts} />
               ) : (
                 <div></div>
@@ -68,9 +70,47 @@ function Home() {
     }
 
     setSemesterToggle(liss);
-    console.log(semesterToggle);
-    // onClick();
+    // console.log(semesterToggle);
+    calculateEcts();
   };
+
+  const Mandatory = () => (
+    <>
+      {calculateMandatory() > 0 && (
+        <div className={styles.line}>
+          +<br />
+          <hr />
+          <div className={styles.result1Left}>{calculateMandatory()}</div>
+          <div className={styles.result1Right}> ects από υποχρεωτικά</div>
+          <div className={styles.ects}>
+            ECTS = {ects + calculateMandatory()}
+          </div>
+          <div className={styles.ects2}>
+            Υπολειπόμενα ECTS = {300 - ects - calculateMandatory()}
+          </div>
+        </div>
+      )}
+    </>
+  );
+
+  const sendCodes = () => {
+    let selected = [];
+    for (let i = 0; i < lessonsState.length; i++) {
+      if (lessonsState[i].selected) {
+        selected.push(parseInt(lessonsState[i].code));
+      }
+    }
+    return selected;
+  };
+
+  const router = useRouter();
+  const codesProp = router.query.codesProp;
+  useEffect(() => {
+    if (codesProp != []) {
+      calculateEcts();
+      // codesProp = [];
+    }
+  }, []);
 
   return (
     <>
@@ -82,29 +122,26 @@ function Home() {
       </Head>
 
       <main>
-        <Link href="/programme">
+        <Link
+          href={{
+            pathname: "/programme",
+            query: {
+              // lessonsProp: JSON.stringify(lessonsState),
+              codesProp: JSON.stringify(sendCodes()),
+            },
+          }}
+        >
           <CalendarMonthIcon className={styles.calendarIcon} />
         </Link>
 
         <div className={styles.container}>
           {[...Array(10)].map((_, i) => (
-            <div className={styles.semester}>
-              Εξάμηνο {i + 1}
-              <span>
-                {/* <input type="checkbox" id="a" /> */}
-                <div
-                  onClick={() => handleClick(i)}
-                  className={
-                    semesterToggle[i]
-                      ? styles.semesterSelected
-                      : styles.semesterUnselected
-                  }
-                >
-                  box
-                </div>
-              </span>
-              <div>{semester(i + 1)}</div>
-            </div>
+            <Semester
+              i={i}
+              semesterToggle={semesterToggle}
+              semester={semester}
+              handleClick={handleClick}
+            />
           ))}
         </div>
 
@@ -121,6 +158,14 @@ function Home() {
               />
             </div>
           )}
+
+          {calculateMandatory() > 0 && (
+            <>
+              Υποχρεωτικά
+              <hr />
+            </>
+          )}
+
           {lessonsState.map((lesson) => {
             return (
               <div>
@@ -136,21 +181,7 @@ function Home() {
               </div>
             );
           })}
-
-          {calculateMandatory() > 0 && (
-            <div className={styles.line}>
-              +<br />
-              <hr />
-              <div className={styles.result1Left}>{calculateMandatory()}</div>
-              <div className={styles.result1Right}> ects από υποχρεωτικά</div>
-              <div className={styles.ects}>
-                ECTS = {ects + calculateMandatory()}
-              </div>
-              <div className={styles.ects2}>
-                Υπολειπόμενα ECTS = {300 - ects - calculateMandatory()}
-              </div>
-            </div>
-          )}
+          {/* <Mandatory /> */}
         </div>
       </main>
 
@@ -159,7 +190,6 @@ function Home() {
         body {
           max-width: 100vw;
           overflow-y: overlay;
-          // overflow-x: hidden;
         }
         body {
           color: black;

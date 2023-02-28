@@ -5,14 +5,14 @@ import styles from "styles/Programme.module.css";
 // import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
 import { p_X23 } from "components/programmaXeim2023.js";
-
-// import { Container, Row, Col } from "reactstrap";
-
+import { useRouter } from "next/router";
 
 export default function Programme() {
   const [programme, setProgramme] = useState([]);
   const days = ["Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή"];
   const days_idx = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  const router = useRouter();
+  const codesProp = router.query.codesProp;
 
   const hours = (number1: number, type: string) => {
     let s = "";
@@ -28,48 +28,50 @@ export default function Programme() {
   };
 
   const makeProgramme = () => {
-    let newP : any[any] = Array(60).fill([" "]);
-    p_X23.map(classe => {
-      classe.Mon.map(hour => {
-        let idx = hour - 9; 
-        if (newP[idx] == " ") {
-          newP[idx] = [classe.Name];
-        } else {
-          newP[idx] = [...newP[idx], classe.Name];
-        }
-      });
-      classe.Tue.map(hour => {
-        let idx = hour - 9 + 12; 
-        if (newP[idx] == " ") {
-          newP[idx] = [classe.Name];
-        } else {
-          newP[idx] = [...newP[idx], classe.Name];
-        }
-      });
-      classe.Wed.map(hour => {
-        let idx = hour - 9 + 24; 
-        if (newP[idx] == " ") {
-          newP[idx] = [classe.Name];
-        } else {
-          newP[idx] = [...newP[idx], classe.Name];
-        }
-      });
-      classe.Thu.map(hour => {
-        let idx = hour - 9 + 36; 
-        if (newP[idx] == " ") {
-          newP[idx] = [classe.Name];
-        } else {
-          newP[idx] = [...newP[idx], classe.Name];
-        }
-      });
-      classe.Fri.map(hour => {
-        let idx = hour - 9 + 48; 
-        if (newP[idx] == " ") {
-          newP[idx] = [classe.Name];
-        } else {
-          newP[idx] = [...newP[idx], classe.Name];
-        }
-      });
+    let newP: any[any] = Array(60).fill([" "]);
+    p_X23.map((classe) => {
+      if (codesProp.includes(classe.Code)) {
+        classe.Mon.map((hour) => {
+          let idx = hour - 9;
+          if (newP[idx] == " ") {
+            newP[idx] = [classe.Name];
+          } else {
+            newP[idx] = [...newP[idx], classe.Name];
+          }
+        });
+        classe.Tue.map((hour) => {
+          let idx = hour - 9 + 12;
+          if (newP[idx] == " ") {
+            newP[idx] = [classe.Name];
+          } else {
+            newP[idx] = [...newP[idx], classe.Name];
+          }
+        });
+        classe.Wed.map((hour) => {
+          let idx = hour - 9 + 24;
+          if (newP[idx] == " ") {
+            newP[idx] = [classe.Name];
+          } else {
+            newP[idx] = [...newP[idx], classe.Name];
+          }
+        });
+        classe.Thu.map((hour) => {
+          let idx = hour - 9 + 36;
+          if (newP[idx] == " ") {
+            newP[idx] = [classe.Name];
+          } else {
+            newP[idx] = [...newP[idx], classe.Name];
+          }
+        });
+        classe.Fri.map((hour) => {
+          let idx = hour - 9 + 48;
+          if (newP[idx] == " ") {
+            newP[idx] = [classe.Name];
+          } else {
+            newP[idx] = [...newP[idx], classe.Name];
+          }
+        });
+      }
     });
 
     // console.log(newP);
@@ -88,13 +90,19 @@ export default function Programme() {
 
     return (
       <div className={styles.flixBox}>
-        {listt.map(i => (
-          <div key={i + 200} className={styles.flixItem}>{i}</div>
+        {listt.map((i) => (
+          <div key={i + 200} className={styles.flixItem}>
+            {i}
+          </div>
         ))}
       </div>
     );
   };
 
+  const print = () => {
+    window.print();
+    return false;
+  };
   return (
     <>
       <Head>
@@ -104,7 +112,14 @@ export default function Programme() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Link href="/">
+        <Link
+          href={{
+            pathname: "/",
+            query: {
+              codesProp: codesProp,
+            },
+          }}
+        >
           <FactCheckIcon className={styles.calendarIcon} />
         </Link>
         <div className={styles.gridContainer}>
@@ -125,7 +140,9 @@ export default function Programme() {
             )}
           </div>
         </div>
-        Second Page
+        <button className={styles.printButton} onClick={print}>
+          Save as PDF
+        </button>
         <style jsx global>{`
           html,
           body {

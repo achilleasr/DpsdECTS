@@ -668,7 +668,7 @@ export const hardcodedLessons = [
 
 export const hardcodedSemesterToggles = [
   false,
-  true,
+  false,
   false,
   false,
   false,

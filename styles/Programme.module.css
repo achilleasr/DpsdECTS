@@ -1,3 +1,9 @@
+@font-face {
+    font-family: GeomLight;
+    src: url('/fonts/Geom Light.ttf');
+}
+
+
 .calendarIcon {
     font-size: 60px;
     width: 60px;
@@ -9,24 +15,21 @@
 }
 
 .gridContainer {
-    margin: 20px;
-    margin-top: 38px;
-    margin-right: 120px;
-    /* margin-bottom: 0px; */
-    /* background-color: rgb(118, 73, 152); */
+    margin: 16px;
+    /* background-color: rgb(0, 0, 0); */
 }
 
 .grid {
     display: grid;
     grid-template-columns: 110px repeat(5, var(--gWidth));
     grid-template-rows: 40px repeat(12, 40px);
-    grid-gap: 5px;
+    grid-gap: 4px;
     font-size: 20px;
 }
 
 
 .cell {
-    background-color: #c5bfbf;
+    /* background-color: #c5bfbf; */
     border-radius: 4px;
     text-align: center;
     display: flex;
@@ -42,7 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 
@@ -57,29 +60,58 @@
     font-size: 16px;
 }
 
-.flixBox{
-    display:flex;
-    background-color: #c5bfbf;
+.flixBox {
+    display: flex;
     justify-content: space-around;
-    background-color: #c5bfbf;
     border-radius: 4px;
     text-align: center;
     display: flex;
-    /* margin: 2px; */
+    gap: 4px;
     width: var(--gWidth);
 }
 
-.flixItem{
-    display:flex;
-    background-color: rgb(204, 219, 247);
-    margin: 4px;
-    flex:1;
+.flixItem {
+    display: flex;
+    /* background-color: rgb(204, 219, 247); */
+    flex: 1;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: 15px;
     align-items: center;
-    /* justify-content: center; */
-    box-shadow: #0000001b 2px 2px 4px;
-    overflow-x: hidden;
-    white-space: nowrap;
+    justify-content: center;
+    box-shadow: #0000002d 2px 2px 4px;
+    /* overflow-x: hidden; */
+    /* white-space: nowrap; */
     padding: 2px;
+}
+
+.printButton {
+    width: 200px;
+    height: 50px;
+    margin-left: 20px;
+    border-radius: 30px;
+    border: 0px;
+    background: #be1717;
+    font-size: 20px;
+    color: antiquewhite
+}
+
+@media print {
+
+    .printButton,
+    .calendarIcon {
+        visibility: hidden;
+        position: fixed;
+        top: 0px;
+    }
+
+    .grid {
+        margin: 4px;
+        grid-template-rows: 40px repeat(12, 48px);
+    }
+
+    @page {
+        size: landscape
+    }
+
+
 }

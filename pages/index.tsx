@@ -106,10 +106,10 @@ function Home() {
   const router = useRouter();
   const codesProp = router.query.codesProp;
   useEffect(() => {
-    if (codesProp != []) {
-      calculateEcts();
-      // codesProp = [];
-    }
+    // if (codesProp !== []) {
+    calculateEcts();
+    // codesProp = [];
+    // }
   }, []);
 
   return (

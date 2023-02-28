@@ -30,47 +30,49 @@ export default function Programme() {
   const makeProgramme = () => {
     let newP: any[any] = Array(60).fill([" "]);
     p_X23.map((classe) => {
-      if (codesProp.includes(classe.Code)) {
-        classe.Mon.map((hour) => {
-          let idx = hour - 9;
-          if (newP[idx] == " ") {
-            newP[idx] = [classe.Name];
-          } else {
-            newP[idx] = [...newP[idx], classe.Name];
-          }
-        });
-        classe.Tue.map((hour) => {
-          let idx = hour - 9 + 12;
-          if (newP[idx] == " ") {
-            newP[idx] = [classe.Name];
-          } else {
-            newP[idx] = [...newP[idx], classe.Name];
-          }
-        });
-        classe.Wed.map((hour) => {
-          let idx = hour - 9 + 24;
-          if (newP[idx] == " ") {
-            newP[idx] = [classe.Name];
-          } else {
-            newP[idx] = [...newP[idx], classe.Name];
-          }
-        });
-        classe.Thu.map((hour) => {
-          let idx = hour - 9 + 36;
-          if (newP[idx] == " ") {
-            newP[idx] = [classe.Name];
-          } else {
-            newP[idx] = [...newP[idx], classe.Name];
-          }
-        });
-        classe.Fri.map((hour) => {
-          let idx = hour - 9 + 48;
-          if (newP[idx] == " ") {
-            newP[idx] = [classe.Name];
-          } else {
-            newP[idx] = [...newP[idx], classe.Name];
-          }
-        });
+      if (codesProp != null) {
+        if (codesProp.includes(classe.Code.toString())) {
+          classe.Mon.map((hour) => {
+            let idx = hour - 9;
+            if (newP[idx] == " ") {
+              newP[idx] = [classe.Name];
+            } else {
+              newP[idx] = [...newP[idx], classe.Name];
+            }
+          });
+          classe.Tue.map((hour) => {
+            let idx = hour - 9 + 12;
+            if (newP[idx] == " ") {
+              newP[idx] = [classe.Name];
+            } else {
+              newP[idx] = [...newP[idx], classe.Name];
+            }
+          });
+          classe.Wed.map((hour) => {
+            let idx = hour - 9 + 24;
+            if (newP[idx] == " ") {
+              newP[idx] = [classe.Name];
+            } else {
+              newP[idx] = [...newP[idx], classe.Name];
+            }
+          });
+          classe.Thu.map((hour) => {
+            let idx = hour - 9 + 36;
+            if (newP[idx] == " ") {
+              newP[idx] = [classe.Name];
+            } else {
+              newP[idx] = [...newP[idx], classe.Name];
+            }
+          });
+          classe.Fri.map((hour) => {
+            let idx = hour - 9 + 48;
+            if (newP[idx] == " ") {
+              newP[idx] = [classe.Name];
+            } else {
+              newP[idx] = [...newP[idx], classe.Name];
+            }
+          });
+        }
       }
     });
 

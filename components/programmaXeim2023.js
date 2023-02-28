@@ -231,7 +231,7 @@ export const p_X23 = [
     Fri: [],
   },
   {
-    Name: "Αν.Κατ.Πρ.ΗΥ(Ε)",
+    Name: "Αν.Κατ. Πρ.ΗΥ(Ε)",
     Semester: 6,
     Room: "ΗΥ/Β02",
     Code: 8452,

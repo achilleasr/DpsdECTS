@@ -376,7 +376,7 @@ export const hardcodedLessons = [
     selected: false,
   },
   {
-    name: "Ακαδημαϊκά Αγγλικά 1",
+    name: "Ακαδημαϊκά Αγγλικά I",
     code: "4011",
     type: "Ελεύθερης Επιλογής (ΕΕ)",
     ects: "2",
@@ -652,7 +652,7 @@ export const hardcodedLessons = [
     code: "10200",
     type: "Ελεύθερης Επιλογής (ΕΕ)",
     ects: "2",
-    semester: "10",
+    semester: "8",
     selected: false,
   },
   {
@@ -664,7 +664,6 @@ export const hardcodedLessons = [
     selected: false,
   },
 ];
-
 
 export const hardcodedSemesterToggles = [
   false,

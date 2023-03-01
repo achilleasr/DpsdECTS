@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "styles/Programme.module.css";
 // import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
-import { p_X23 } from "components/programmaXeim2023.js";
+import { p_X23B } from "components/programmaXeim2023.js";
 import { useRouter } from "next/router";
 
 export default function Programme() {
@@ -32,7 +32,8 @@ export default function Programme() {
   const makeProgramme = () => {
     let newP: any[any] = Array(60).fill([" "]);
     let newColors: any[any] = Array(60).fill([" "]);
-    p_X23.map((classe) => {
+    console.log("a");
+    p_X23B.map((classe) => {
       if (codesProp != null) {
         if (codesProp.includes(classe.Code.toString())) {
           classe.Mon.map((hour) => {

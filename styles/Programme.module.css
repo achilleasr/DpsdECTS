@@ -5,13 +5,14 @@
 
 
 .calendarIcon {
-    font-size: 60px;
-    width: 60px;
-    height: 60px;
+    font-Size: 60px;
+    /* width: 60px; */
+    /* height: 60px; */
     position: fixed;
     bottom: var(--cornerDist);
     right: var(--cornerDist);
     z-index: 3;
+    /* box-shadow: black 2px 2px 2px; */
 }
 
 .gridContainer {

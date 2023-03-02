@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "styles/Programme.module.css";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
 import AddIcon from "@mui/icons-material/Add";
@@ -497,7 +497,7 @@ export default function Programme() {
 
         <div className={styles.credits}>
           <a href="https://github.com/achilleasr/DpsdECTS" target="_blank">
-            <Image src="/logoT.png" width={36} height={36} />
+            <img src="/logoT.png" width="36" height="36" />
           </a>
         </div>
       </footer>

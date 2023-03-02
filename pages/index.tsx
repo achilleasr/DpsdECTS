@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "styles/First.module.css";
 import Lesson from "components/lesson.js";
-import Image from "next/image";
+// import Image from "next/image";
 import React, { useState, useEffect, useCallback } from "react";
 import {
   hardcodedSemesterToggles,
@@ -207,7 +207,7 @@ function Home() {
       <footer>
         <div className={styles.credits}>
           <a href="https://github.com/achilleasr/DpsdECTS" target="_blank">
-            <Image src="/logoT.png" width={36} height={36} />
+            <img src="/logoT.png" width="36" height="36" />
           </a>
         </div>
       </footer>

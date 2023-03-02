@@ -175,7 +175,7 @@
     width: 60px;
     height: 60px;
     position: fixed;
-    top: var(--cornerDist);
+    bottom: var(--cornerDist);
     right: var(--cornerDist);
     z-index: 3;
 }

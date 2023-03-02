@@ -5,9 +5,9 @@
 
 
 .calendarIcon {
-    font-Size: 60px;
-    /* width: 60px; */
-    /* height: 60px; */
+    /* font-Size: 60px; */
+    width: 60px;
+    height: 60px;
     position: fixed;
     bottom: var(--cornerDist);
     right: var(--cornerDist);
@@ -93,16 +93,16 @@
 
 .printButton {
     width: 200px;
-    height: 50px;
+    height: 60px;
     /* margin-left: 20px; */
     border-radius: 30px;
     border: 0px;
     background: #be1717;
-    font-size: 20px;
+    font-size: 22px;
     color: white;
     position: fixed;
     bottom: 20px;
-    left: 30px;
+    left: 60px;
 }
 
 .color {
@@ -188,7 +188,7 @@
 
 .sideListContainer {
     background-color: white;
-    height: 80vh;
+    height: 74vh;
     width: 100%;
     border-radius: 8px;
     display: flex;
@@ -228,6 +228,12 @@
 
 }
 
+.credits {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+
 @media print {
 
     .printButton,
@@ -257,6 +263,13 @@
 
     @page {
         size: landscape
+    }
+
+    .credits {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        visibility: hidden;
     }
 
 

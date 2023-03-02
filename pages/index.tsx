@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "styles/First.module.css";
 import Lesson from "components/lesson.js";
+import Image from "next/image";
 import React, { useState, useEffect, useCallback } from "react";
 import {
   hardcodedSemesterToggles,
@@ -127,7 +128,15 @@ function Home() {
             },
           }}
         >
-          <CalendarMonthIcon className={styles.calendarIcon} />
+          {/* <CalendarMonthIcon className={styles.calendarIcon} /> */}
+          <svg
+            className={styles.calendarIcon}
+            viewBox="0 0 209 334"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M21 21L167 167L21 313" stroke="black" stroke-width="58" />
+          </svg>
         </Link>
 
         <div className={styles.container}>
@@ -194,6 +203,14 @@ function Home() {
           font-family: GeomLight;
         }
       `}</style>
+
+      <footer>
+        <div className={styles.credits}>
+          <a href="https://github.com/achilleasr/DpsdECTS" target="_blank">
+            <Image src="/logoT.png" width={36} height={36} />
+          </a>
+        </div>
+      </footer>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "styles/Programme.module.css";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
 import AddIcon from "@mui/icons-material/Add";
@@ -381,7 +382,17 @@ export default function Programme() {
             },
           }}
         >
-          <FactCheckIcon className={styles.calendarIcon} />
+          {/* <FactCheckIcon className={styles.calendarIcon} /> */}
+          <svg
+            className={styles.calendarIcon}
+            // width="209"
+            // height="334"
+            viewBox="0 0 209 334"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M188 21L42 167L188 313" stroke="black" stroke-width="58" />
+          </svg>
         </Link>
         <div className={styles.bigContainer}>
           <div
@@ -482,6 +493,12 @@ export default function Programme() {
           <div className={`${styles.roomItem} ${styles.colorAmfi}`}>
             B02 Αμφιθέατρο Γυμνασίου
           </div>
+        </div>
+
+        <div className={styles.credits}>
+          <a href="https://github.com/achilleasr/DpsdECTS" target="_blank">
+            <Image src="/logoT.png" width={36} height={36} />
+          </a>
         </div>
       </footer>
     </>

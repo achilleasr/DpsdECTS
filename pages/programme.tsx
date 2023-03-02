@@ -163,7 +163,7 @@ export default function Programme() {
       });
 
       hov.Thu.map((hour) => {
-        let idx = hour - 9 + 32;
+        let idx = hour - 9 + 36;
         if (newP[idx] == " " && newP[idx] != hov.Name) {
           newP[idx] = [hov.Name];
           newColors[idx] = [defaultHoverItem.Room];

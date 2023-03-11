@@ -8,12 +8,9 @@
     src: url('/fonts/Geom Light.ttf');
 }
 
-
-
 .box {
     color: grey;
-    /* border: black solid 2px; */
-    background: linear-gradient(90deg, rgba(207, 254, 255, 1) 0%, rgba(175, 208, 255, 1) 100%);
+    background: linear-gradient(90deg, rgb(207, 254, 255) 0%, rgb(175, 208, 255) 100%);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border-radius: 20px;
     padding: 2px 16px;
@@ -23,15 +20,10 @@
     height: 30px;
     justify-content: space-between;
     align-items: center;
-    /* border: linear-gradient(90deg, rgba(207,254,255,1) 0%, rgba(175,208,255,1) 100%) solid 2px; */
-    /* width: 40%; */
-    /* box-shadow:  20px 20px 60px #bebebe,
-             -20px -20px 60px #ffffff; */
 }
 
 .box2 {
     color: white;
-    /* border: black solid 2px; */
     background: rgb(25, 25, 112);
     border-radius: 20px;
     padding: 2px 16px;
@@ -42,25 +34,15 @@
     display: flex;
     height: 30px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
-    /* border: linear-gradient(90deg, rgba(207,254,255,1) 0%, rgba(175,208,255,1) 100%) solid 2px; */
-    /* width: 40%; */
 }
-
 
 .box:hover {
     background: linear-gradient(90deg, rgba(255, 254, 255, 1) 0%, rgba(215, 218, 255, 1) 100%);
-
-    /* border: white solid 3px; */
-    /* padding: 0px 8px; */
-    /* color: black; */
 }
-
 
 .box2:hover {
     background: linear-gradient(90deg, rgba(25, 25, 112, 0.8) 0% 0%, rgba(25, 38, 155, 0.8) 100%);
 }
-
 
 .container {
     width: 45%;
@@ -68,54 +50,34 @@
     margin: 10px;
 }
 
-
 .containerRight {
     width: 50%;
-    /* margin: 10px; */
     position: fixed;
     right: 2px;
     top: 0px;
     height: 100vh;
     overflow-y: auto;
-    /* background-color: rgba(137, 43, 226, 0.338); */
 }
 
 
-
-
 .ects {
-    /* position: fixed; */
-    /* top:30px; */
     position: sticky;
     font-size: 3.3em;
     margin: 20px;
 }
 
 .ects2 {
-    /* position: fixed; */
-    /* top: 130px; */
-    font-size: 30px;
+    font-size: 24px;
     margin: 20px;
 }
 
 .ectsPassed {
-    /* position: fixed; */
-    /* top:30px; */
-    /* font-size: 18.3em; */
     margin: 20px;
 }
 
 
-
-
-
-
-
 .additionContainer {
-    /* border: red solid 2px; */
     font-size: 14px;
-    /* width:10%; */
-    /* background: rgb(143, 175, 188); */
     margin-left: 70px;
     margin-right: 20px;
     margin-bottom: 6px;
@@ -125,14 +87,10 @@
     width: 10%;
     font-size: 16px;
     text-align: right;
-    /* float: right;
-    margin-left: 50%;
-    margin-right: 50%; */
 }
 
 .additionName {
     float: right;
-    /* background: grey; */
     white-space: nowrap;
     width: 85%;
 
@@ -147,22 +105,17 @@
     width: 8%;
     text-align: right;
     float: left;
-    /* background: rosybrown; */
+
 }
 
 .result1Right {
-    /* margin-left:65px; */
     font-size: 16px;
-    /* float: right; */
     width: 65%;
     overflow-x: hidden;
-    /* background: rgb(15, 157, 67); */
 }
 
 .line {
     margin-top: -20px;
-    /* margin-right:20px;
-    margin-left:20px; */
 }
 
 
@@ -171,7 +124,6 @@
 }
 
 .calendarIcon {
-    /* font-Size: 60px; */
     width: 60px;
     height: 60px;
     position: fixed;
@@ -182,7 +134,6 @@
 
 
 .semesterContainer {
-    /* border: black solid 2px; */
     background: lightskyblue;
     border-radius: 10px;
     padding: 10px;
@@ -192,7 +143,6 @@
 }
 
 .semesterTitle {
-    /* background: rgb(58, 190, 124); */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -256,22 +206,10 @@
     }
 
     .ects {
-        /* position: fixed; */
-        /* background: white;
-        border: 4px white solid;
-        border-radius: 12px; */
-        /* top: 0px; */
-        /* right:10px; */
         font-size: 1em;
     }
 
     .ects2 {
-        /* position: fixed; */
-        /* background: white;
-        border: 4px white solid;
-        border-radius: 12px; */
-        /* top: 30px; */
-        /* right:10px; */
         font-size: 10px;
     }
 
@@ -280,26 +218,19 @@
         background: rgba(255, 255, 255, 0.623);
         border: 4px rgba(255, 255, 255, 0.374) solid;
         border-radius: 12px;
-        /* margin: 10px; */
         position: fixed;
         right: 2px;
         top: 30px;
-        /* overflow-y: scroll; */
     }
 
     .additionContainer {
-        /* border: red solid 2px; */
-        /* font-size: 14px; */
         width: 80%;
         right: 0px;
-        /* position: fixed; */
-        /* top: 40px; */
-        /* border-radius: 12px;
-        background: white;
-        border: 4px white solid; */
-        /* margin-left:70px; */
-        /* margin-right:20px; */
-        /* margin-top: 6px; */
         margin: 0px;
     }
+}
+
+.ylika {
+    background-image: url("/30325.svg"), linear-gradient(90deg, rgb(207, 254, 255) 0%, rgb(175, 208, 255) 100%);
+    background-size: 33px, 100%;
 }

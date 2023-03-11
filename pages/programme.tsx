@@ -198,7 +198,7 @@ export default function Programme() {
     makeProgramme();
   }, [hoveredItems]);
 
-  const flixBox = (idx: number) => {
+  const flixBox = (idx: number, key: number) => {
     const classColor = [
       styles.color,
       styles.colorHY,
@@ -261,7 +261,7 @@ export default function Programme() {
     };
 
     return (
-      <div className={styles.flixBox}>
+      <div key={key} className={styles.flixBox}>
         {listt.map((val, idu) => (
           <div key={idu + 200} className={`${styles.flixItem} ${choose(idu)}`}>
             {val}
@@ -287,9 +287,9 @@ export default function Programme() {
       // console.log("code");
       if (thisSemesterClasses.toString().includes(code.toString())) {
         let index = -1;
-        console.log(thisSemesterClasses);
+        // console.log(thisSemesterClasses);
         index = thisSemesterClasses.indexOf(code);
-        console.log(index);
+        // console.log(index);
         if (index !== -1) {
           thisSemesterClasses.splice(index, 1);
         }
@@ -382,16 +382,13 @@ export default function Programme() {
             },
           }}
         >
-          {/* <FactCheckIcon className={styles.calendarIcon} /> */}
           <svg
             className={styles.calendarIcon}
-            // width="209"
-            // height="334"
             viewBox="0 0 209 334"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M188 21L42 167L188 313" stroke="black" stroke-width="58" />
+            <path d="M188 21L42 167L188 313" stroke="black" strokeWidth="58" />
           </svg>
         </Link>
         <div className={styles.bigContainer}>
@@ -411,7 +408,7 @@ export default function Programme() {
                     {hours(i / 6 + 9, "verbose")}
                   </div>
                 ) : (
-                  flixBox(getIndex(i))
+                  flixBox(getIndex(i), i + 6)
                 )
               )}
             </div>
@@ -422,7 +419,7 @@ export default function Programme() {
             <div className={styles.sideListContainer}>
               {xeimerino(selectedClasses).length > 0 ? (
                 [...Array(xeimerinaLength)].map((_, i) => (
-                  <SideBarItem code={xeimerino(selectedClasses)[i]} />
+                  <SideBarItem key={i} code={xeimerino(selectedClasses)[i]} />
                 ))
               ) : (
                 <div>Κανένα χειμερινό μάθημα</div>

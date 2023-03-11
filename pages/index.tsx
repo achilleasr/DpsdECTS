@@ -135,13 +135,14 @@ function Home() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M21 21L167 167L21 313" stroke="black" stroke-width="58" />
+            <path d="M21 21L167 167L21 313" stroke="black" strokeWidth="58" />
           </svg>
         </Link>
 
         <div className={styles.container}>
           {[...Array(10)].map((_, i) => (
             <Semester
+              key={i}
               i={i}
               semesterToggle={semesterToggle}
               semester={semester}
@@ -173,7 +174,7 @@ function Home() {
 
           {lessonsState.map((lesson) => {
             return (
-              <div>
+              <div key={lesson.code}>
                 {lesson.selected == false &&
                 lesson.type == "Υποχρεωτικό (Υ)" ? (
                   <div className={styles.additionContainer}>

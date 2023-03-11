@@ -10,7 +10,7 @@ export const defaultHoverItem = {
   Fri: [],
 };
 
-export const p_X23B = [
+export const p_E23B = [
   {
     Name: "Στούντιο 2Α-Β",
     Semester: 2,

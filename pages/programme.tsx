@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "styles/Programme.module.css";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { p_X23B, defaultHoverItem } from "components/programmaXeim2023.js";
+import { p_E23B, defaultHoverItem } from "components/p_EARINO2023.js";
 import { hardcodedLessons } from "components/hardcoded.js";
 import { useRouter } from "next/router";
 
@@ -39,7 +39,7 @@ export default function Programme() {
 
   const days = ["Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή"];
   const days_idx = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-  let xeimerinaLength = 0;
+  let earinaLength = 0;
   const router = useRouter();
   let selectedClasses: any[] = [];
   if (router.query.codesProp) {
@@ -62,7 +62,7 @@ export default function Programme() {
   const makeProgramme = () => {
     let newP: any[any] = Array(60).fill([" "]);
     let newColors: any[any] = Array(60).fill([" "]);
-    p_X23B.map((classe) => {
+    p_E23B.map((classe) => {
       if (thisSemesterClasses != null) {
         if (thisSemesterClasses.toString().includes(classe.Code.toString())) {
           classe.Mon.map((hour) => {
@@ -268,6 +268,8 @@ export default function Programme() {
   };
 
   const print = () => {
+    var tempTitle = document.title;
+    document.title = "Earino2023.pdf";
     window.print();
     return false;
   };
@@ -303,7 +305,7 @@ export default function Programme() {
 
   const SideBarItem = ({ code }: { code: number }) => {
     const startHover = (e: React.ChangeEvent<any>) => {
-      setHoveredItems(classesFromCodeXeim(code));
+      setHoveredItems(classesFromCodeEar(code));
     };
     const stopHover = (e: React.ChangeEvent<any>) => {
       setHoveredItems([defaultHoverItem]);
@@ -357,31 +359,30 @@ export default function Programme() {
     return item;
   };
 
-  const classesFromCodeXeim = (code: number) => {
-    const items: Classe[] = p_X23B.filter((obj) => {
+  const classesFromCodeEar = (code: number) => {
+    const items: Classe[] = p_E23B.filter((obj) => {
       return obj.Code == code;
     });
     return items;
   };
 
-  const classFromCodeXeim = (code: number) => {
-    const item = p_X23B.find((obj) => {
+  const classFromCodeEar = (code: number) => {
+    const item = p_E23B.find((obj) => {
       return obj.Code == code;
     });
 
     return item;
   };
 
-  const xeimerino = (listOfSelected: number[]) => {
-    let xeimeriniLista = [];
-
+  const earino = (listOfSelected: number[]) => {
+    let eariniLista = [];
     for (let i = 0; i < listOfSelected.length; i++) {
-      if (classFromCodeXeim(listOfSelected[i]) !== undefined) {
-        xeimeriniLista.push(listOfSelected[i]);
+      if (classFromCodeEar(listOfSelected[i]) !== undefined) {
+        eariniLista.push(listOfSelected[i]);
       }
     }
-    xeimerinaLength = xeimeriniLista.length;
-    return xeimeriniLista;
+    earinaLength = eariniLista.length;
+    return eariniLista;
   };
 
   return (
@@ -442,9 +443,9 @@ export default function Programme() {
             <div className={styles.sideList}>
               <div className={styles.sideListTitle}>Μαθήματα Εξαμήνου</div>
               <div className={styles.sideListContainer}>
-                {xeimerino(selectedClasses).length > 0 ? (
-                  [...Array(xeimerinaLength)].map((_, i) => (
-                    <SideBarItem key={i} code={xeimerino(selectedClasses)[i]} />
+                {earino(selectedClasses).length > 0 ? (
+                  [...Array(earinaLength)].map((_, i) => (
+                    <SideBarItem key={i} code={earino(selectedClasses)[i]} />
                   ))
                 ) : (
                   <div>Κανένα χειμερινό μάθημα</div>

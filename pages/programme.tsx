@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "styles/Programme.module.css";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { p_E23B, defaultHoverItem } from "components/p_EARINO2023.js";
+import { p_E23_v4, defaultHoverItem } from "components/p_EARINO2023.js";
 import { hardcodedLessons } from "components/hardcoded.js";
 import { useRouter } from "next/router";
 
@@ -62,7 +62,7 @@ export default function Programme() {
   const makeProgramme = () => {
     let newP: any[any] = Array(60).fill([" "]);
     let newColors: any[any] = Array(60).fill([" "]);
-    p_E23B.map((classe) => {
+    p_E23_v4.map((classe) => {
       if (thisSemesterClasses != null) {
         if (thisSemesterClasses.toString().includes(classe.Code.toString())) {
           classe.Mon.map((hour) => {
@@ -360,14 +360,14 @@ export default function Programme() {
   };
 
   const classesFromCodeEar = (code: number) => {
-    const items: Classe[] = p_E23B.filter((obj) => {
+    const items: Classe[] = p_E23_v4.filter((obj) => {
       return obj.Code == code;
     });
     return items;
   };
 
   const classFromCodeEar = (code: number) => {
-    const item = p_E23B.find((obj) => {
+    const item = p_E23_v4.find((obj) => {
       return obj.Code == code;
     });
 

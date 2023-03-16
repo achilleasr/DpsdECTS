@@ -482,7 +482,7 @@ export const hardcodedLessons = [
   {
     name: "Σχεδίαση για Αειφορία και Κυκλική Οικονομία",
     code: "9012",
-    type: "Υποχρεωτικό Επιλογής Κατεύθυνσης 3 (ΥΕΚ3)",
+    type: "Ελεύθερης Επιλογής (ΕΕ)",
     ects: "4",
     semester: "8",
     selected: false,
@@ -652,7 +652,7 @@ export const hardcodedLessons = [
     code: "10200",
     type: "Ελεύθερης Επιλογής (ΕΕ)",
     ects: "2",
-    semester: "8",
+    semester: "10",
     selected: false,
   },
   {

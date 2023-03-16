@@ -530,7 +530,7 @@ export const hardcodedLessons = [
   {
     name: "Αισθητική και Συναισθηματική Σχεδίαση",
     code: "10302",
-    type: "Ελεύθερης Επιλογής (ΕΕ)",
+    type: "Υποχρεωτικό Επιλογής Κατεύθυνσης 3 (ΥΕΚ3)",
     ects: "5",
     semester: "8",
     selected: false,

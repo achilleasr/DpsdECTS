@@ -108,6 +108,30 @@ function Home() {
     calculateEcts();
   }, []);
 
+  const howManyOfType = (t: number) => {
+    let typeName = "";
+    switch (t) {
+      case 1:
+        typeName = "Υποχρεωτικό Επιλογής Κατεύθυνσης 1 (ΥΕΚ1)";
+        break;
+      case 2:
+        typeName = "Υποχρεωτικό Επιλογής Κατεύθυνσης 2 (ΥΕΚ2)";
+        break;
+      case 3:
+        typeName = "Υποχρεωτικό Επιλογής Κατεύθυνσης 3 (ΥΕΚ3)";
+        break;
+    }
+    let num = 0;
+    for (let i = 0; i < lessonsState.length; i++) {
+      if (
+        lessonsState[i].selected === true &&
+        lessonsState[i].type === typeName
+      ) {
+        num++;
+      }
+    }
+    return num;
+  };
   return (
     <>
       <Head>
@@ -149,19 +173,29 @@ function Home() {
         </div>
 
         <div className={styles.containerRight}>
-          <div className={styles.ects}>ECTS = {ects}</div>
-          {300 - ects > 0 || calculateMandatory() > 0 ? (
-            <div className={styles.ects2}>Υπολειπόμενα ECTS = {300 - ects}</div>
-          ) : (
-            <div className={styles.ectsPassed}>
-              <img
-                className={styles.smiley}
-                src="/smiley.svg"
-                alt="Graduated Happily"
-              />
+          <div className={styles.topFlexBox}>
+            <div>
+              <div className={styles.ects}>ECTS = {ects}</div>
+              {300 - ects > 0 || calculateMandatory() > 0 ? (
+                <div className={styles.ects2}>
+                  Υπολειπόμενα ECTS = {300 - ects}
+                </div>
+              ) : (
+                <div className={styles.ectsPassed}>
+                  <img
+                    className={styles.smiley}
+                    src="/smiley.svg"
+                    alt="Graduated Happily"
+                  />
+                </div>
+              )}
             </div>
-          )}
-
+            <div className={styles.flexRight}>
+              <div>Interaction Design: {howManyOfType(1)} </div>
+              <div>Computer-Aided Design: {howManyOfType(2)} </div>
+              <div>Service Design: {howManyOfType(3)} </div>
+            </div>
+          </div>
           {calculateMandatory() > 0 && (
             <>
               Υποχρεωτικά

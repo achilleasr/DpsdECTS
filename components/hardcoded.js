@@ -652,7 +652,7 @@ export const hardcodedLessons = [
     code: "10200",
     type: "Ελεύθερης Επιλογής (ΕΕ)",
     ects: "2",
-    semester: "10",
+    semester: "8",
     selected: false,
   },
   {

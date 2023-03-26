@@ -10,7 +10,7 @@ export const defaultHoverItem = {
   Fri: [],
 };
 
-export const p_E23_v4 = [
+export const p_E23_v5 = [
   {
     Name: "Στούντιο 2Α-Β",
     Semester: 2,
@@ -360,18 +360,18 @@ export const p_E23_v4 = [
     Mon: [],
     Tue: [],
     Wed: [15, 16],
-    Thu: [9, 10],
+    Thu: [13, 14],
     Fri: [],
   },
   {
-    Name: " Γνωστική Επιστήμη",
+    Name: "Γνωστική Επιστήμη",
     Semester: 4,
     Room: "Π11",
     Code: 8154,
     Mon: [],
     Tue: [],
     Wed: [17, 18],
-    Thu: [],
+    Thu: [15, 16],
     Fri: [],
   },
   {
@@ -414,7 +414,7 @@ export const p_E23_v4 = [
     Code: 10152,
     Mon: [],
     Tue: [],
-    Wed: [13, 14, 15],
+    Wed: [12, 13, 14],
     Thu: [],
     Fri: [],
   },
@@ -483,17 +483,6 @@ export const p_E23_v4 = [
     Wed: [],
     Thu: [19, 20],
     Fri: [15, 16, 17],
-  },
-  {
-    Name: "Γνωστική Επιστήμη",
-    Semester: 4,
-    Room: "Β02",
-    Code: 8154,
-    Mon: [],
-    Tue: [],
-    Wed: [],
-    Thu: [11, 12],
-    Fri: [],
   },
   {
     Name: "Σχεδίαση για όλους",

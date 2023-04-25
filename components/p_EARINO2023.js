@@ -10,7 +10,7 @@ export const defaultHoverItem = {
   Fri: [],
 };
 
-export const p_E23_v5 = [
+export const p_E23_v6 = [
   {
     Name: "Στούντιο 2Α-Β",
     Semester: 2,
@@ -144,17 +144,6 @@ export const p_E23_v5 = [
     Fri: [],
   },
   {
-    Name: "Σχ.&Τεχ. Παραγωγής(Θ)",
-    Semester: 8,
-    Room: "Β13",
-    Code: 9503,
-    Mon: [15, 16],
-    Tue: [],
-    Wed: [],
-    Thu: [],
-    Fri: [],
-  },
-  {
     Name: "Πρακτική Άσκηση",
     Semester: 8,
     Room: "Β12",
@@ -181,17 +170,6 @@ export const p_E23_v5 = [
     Semester: 8,
     Room: "ΗΥ",
     Code: 4502,
-    Mon: [19, 20],
-    Tue: [],
-    Wed: [],
-    Thu: [],
-    Fri: [],
-  },
-  {
-    Name: "Σχ.&Τεχ. Παραγωγής(Ε)",
-    Semester: 8,
-    Room: "Β13",
-    Code: 9503,
     Mon: [19, 20],
     Tue: [],
     Wed: [],
@@ -260,6 +238,28 @@ export const p_E23_v5 = [
     Code: 8452,
     Mon: [],
     Tue: [13, 14],
+    Wed: [],
+    Thu: [],
+    Fri: [],
+  },
+  {
+    Name: "Σχ.&Τεχ. Παραγωγής(Θ)",
+    Semester: 8,
+    Room: "Β12",
+    Code: 9503,
+    Mon: [],
+    Tue: [9, 10],
+    Wed: [],
+    Thu: [],
+    Fri: [],
+  },
+  {
+    Name: "Σχ.&Τεχ. Παραγωγής(Ε)",
+    Semester: 8,
+    Room: "Β12",
+    Code: 9503,
+    Mon: [],
+    Tue: [11, 12],
     Wed: [],
     Thu: [],
     Fri: [],

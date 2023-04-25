@@ -245,11 +245,20 @@
     left: 0px;
 }
 
+.version {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: medium;
+    padding: 3px;
+}
+
 @media print {
 
     .printButton,
     .printButton2,
-    .calendarIcon {
+    .calendarIcon,
+    .version {
         visibility: hidden;
         position: fixed;
         top: 0px;

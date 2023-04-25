@@ -457,6 +457,8 @@ export default function Programme() {
             Save as Pdf
           </button>
 
+          <div className={styles.version}>Προγραμμα v6 από 24/4/2023</div>
+
           {/* <button className={styles.printButton2} onClick={print}>
             Save as PDF Alternative
           </button> */}
